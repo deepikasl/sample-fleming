@@ -10,14 +10,14 @@ resources:
       
 #VERSIONS
 
-  - name: fl-version
+  - name: glab-version
     type: version
     seed:
       versionName: "1.2.123-beta"
       
 #NOTIFICATIONS
 
-  - name: fl-email
+  - name: glab-email
     type: notification
     integration: "plv2-emailcock1"
     pointer:
@@ -27,7 +27,7 @@ resources:
         
 #IMAGES
         
-  - name: fl-img1
+  - name: glab-img1
     type: image
     integration: plv2-docker
     pointer:
@@ -35,17 +35,17 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: fl-img2
+  - name: glab-img2
     type: image
     integration: plv2-docker
     pointer:
       sourceName: "shippabledocker/pipelinev2"
     seed:
-      versionName: "deploy.5"
+      versionName: "deploy.2"
         
 #TIME
 
-  - name: fl-timeresource
+  - name: glab-timeresource
     type: time
     seed:
       interval: "8 8 8 8 *"
