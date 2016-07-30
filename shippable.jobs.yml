@@ -41,3 +41,8 @@ jobs:
       - IN: uitest-man2
         switch: on
   
+  - name: uitest-man7
+    type: manifest
+    steps:
+      - IN: uitest-img1
+      - IN: uitest-tg1
