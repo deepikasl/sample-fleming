@@ -32,4 +32,12 @@ jobs:
     steps:
       - IN: uitest-img3
       - IN: uitest-tg3
+      
+  - name: uitest-man6
+    type: manifest
+    steps:
+      - IN: uitest-man1
+        switch: off
+      - IN: uitest-man2
+        switch: on
   
