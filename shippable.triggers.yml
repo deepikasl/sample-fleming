@@ -8,7 +8,7 @@ triggers:
   - name: uitest-tg2
     type: trigger
     version:
-      counter: 2
+      counter: 3
       
   - name: uitest-tg3
     type: trigger
