@@ -31,5 +31,5 @@ jobs:
     type: manifest
     steps:
       - IN: uitest-img3
-      - IN: uitest-tg2
+      - IN: uitest-tg3
   
