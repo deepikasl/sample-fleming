@@ -4,3 +4,8 @@ triggers:
     type: trigger
     version:
       counter: 1
+      
+  - name: uitest-tg2
+    type: trigger
+    version:
+      counter: 1
