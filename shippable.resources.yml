@@ -1,19 +1,1 @@
 resources:
-        
-#IMAGES
-        
-  - name: flui-img1
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.1"
-      
-  - name: flui-img2
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.5"
