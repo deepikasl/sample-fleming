@@ -1,4 +1,13 @@
 resources:
+
+#CLUSTERS
+
+  - name: uitest-ddccluster
+    type: cluster
+    integration: plv2-ddc
+    pointer:
+      sourceName : "nothing"
+      
 #IMAGES
         
   - name: uitest-img1
