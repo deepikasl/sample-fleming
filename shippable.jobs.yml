@@ -45,4 +45,12 @@ jobs:
     type: manifest
     steps:
       - IN: uitest-img1
+      - IN: uitest-dopts1
       - IN: uitest-tg1
+
+  - name: uitest-ddcdeploy
+    type: deploy
+    steps:
+      - IN: uitest-man1
+      - IN: uitest-dopts1
+      - IN: uitest-ddccluster
