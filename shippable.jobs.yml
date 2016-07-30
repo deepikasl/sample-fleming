@@ -7,4 +7,15 @@ jobs:
     steps:
       - IN: uitest-img1
       - IN: uitest-tg1
+      
+  - name: uitest-man2
+    type: manifest
+    steps:
+      - IN: uitest-img2
+      - IN: uitest-tg2
+      
+  - name: uitest-man3mftomf
+    type: manifest
+    steps:
+      - IN: uitest-man2
   
