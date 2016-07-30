@@ -18,10 +18,17 @@ jobs:
     type: manifest
     steps:
       - IN: uitest-man2
+    trigger: false
       
   - name: uitest-man4mftomf
     type: manifest
     steps:
       - IN: uitest-man1
       - IN: uitest-man3mftomf
+      
+  - name: uitest-man5
+    type: manifest
+    steps:
+      - IN: uitest-img3
+      - IN: uitest-tg2
   
