@@ -1,5 +1,1 @@
 triggers:
-   - name: flui-tg1
-     type: trigger
-     version:
-       counter: 1
