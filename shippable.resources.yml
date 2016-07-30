@@ -26,15 +26,6 @@ resources:
     seed:
       versionName: "deploy.2"
       
- # DOCKER OPTIONS:
-
-  - name: uitest-dopts1
-    type: dockerOptions
-    version:
-      memory: 128
-      portMappings:
-        - "80:80"
-
 #  - name: uitest-img3
  #   type: image
   #  integration: plv2-docker
