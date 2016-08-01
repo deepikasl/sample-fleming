@@ -2,15 +2,16 @@ resources:
 
 #CLUSTERS
 
-  - name: uitest-ddccluster
+  - name: real-ecscluster
     type: cluster
-    integration: plv2-ddc
+    integration: plv2-ecs
     pointer:
-      sourceName : "nothing"
-      
+      sourceName : "testCL"
+      region: "us-west-2"
+
 #IMAGES
         
-  - name: uitest-img1
+  - name: real-img1
     type: image
     integration: plv2-docker
     pointer:
@@ -18,13 +19,34 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: uitest-img2
+  - name: real-img2
     type: image
     integration: plv2-docker
     pointer:
       sourceName: "shippabledocker/pipelinev2"
     seed:
       versionName: "deploy.2"
+      
+  - name: real-img3
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.3"
+      
+  - name: real-dopts1
+    type: dockerOptions
+    version:
+      memory: 128
+      
+  - name: real-params1
+    type: params
+    version:
+      params:
+        MONGO_API_URL: "localhost:28017"
+        TEST: BETA
+        pipelinev2: fleming
       
 #  - name: uitest-img3
  #   type: image
