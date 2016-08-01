@@ -28,6 +28,12 @@ jobs:
       - IN: real-img3
       - IN: real-tg4
       
+  - name: real-man5
+    type: manifest
+    steps:
+      - IN: real-img3
+      - IN: real-tg5
+      
   #- name: real-man5mftomf
    # type: manifest
     #steps:
@@ -60,6 +66,13 @@ jobs:
     type: deploy
     steps:
       - IN: real-man3
+      - IN: real-ecscluster
+      
+  - name: real-ecsdeploy5
+    type: deploy
+    steps:
+      - IN: real-man4
+      - IN: real-man5
       - IN: real-ecscluster
       
 # REALESE
