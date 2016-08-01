@@ -21,4 +21,4 @@ jobs:
     steps:
       - IN: srl-man1
       - IN: srl-man2
-      - IN: fl-ddccluster
+      - IN: srl-ddccluster
