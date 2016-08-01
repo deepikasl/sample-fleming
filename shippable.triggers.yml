@@ -3,7 +3,7 @@ triggers:
   - name: real-tg1
     type: trigger
     version:
-      counter: 4
+      counter: 5
       
   - name: real-tg2
     type: trigger
