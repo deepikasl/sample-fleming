@@ -48,6 +48,18 @@ jobs:
       - IN: real-release1
       - IN: real-ecscluster
       
+  - name: real-ecsdeploy3
+    type: deploy
+    steps:
+      - IN: real-man2
+      - IN: real-ecscluster
+      
+  - name: real-ecsdeploy4
+    type: deploy
+    steps:
+      - IN: real-man3
+      - IN: real-ecscluster
+      
 # REALESE
 
   - name: real-release1
@@ -70,7 +82,7 @@ jobs:
     type: release
     steps:
       - IN: real-version3
-      - IN: real-man2
+      - IN: real-ecsdeploy3
       - TASK: managed
         bump: beta
         
@@ -78,7 +90,7 @@ jobs:
     type: release
     steps:
       - IN: real-version4
-      - IN: real-man3
+      - IN: real-ecsdeploy4
       - TASK: managed
         bump: alpha
         
