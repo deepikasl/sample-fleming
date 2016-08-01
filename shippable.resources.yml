@@ -63,3 +63,8 @@ resources:
     seed:
       versionName: "1.2.3-beta"
       
+  - name: real-version3
+    type: version
+    seed:
+      versionName: "11.2.3"
+      
