@@ -2,55 +2,44 @@ jobs:
   
 #MANIFESTS
       
-  - name: uitest-man1
+  - name: real-man1
     type: manifest
     steps:
-      - IN: uitest-img1
-      - IN: uitest-tg1
+      - IN: real-img1
+      - IN: real-tg1
       
-  - name: uitest-man2
+  - name: real-man2
     type: manifest
     steps:
-      - IN: uitest-img2
-      - IN: uitest-tg2
+      - IN: real-img2
+      - IN: real-tg2
       
   - name: uitest-man3mftomf
     type: manifest
     steps:
-      - IN: uitest-man2
-        switch: off
-      - IN: uitest-man5
-      
-  - name: uitest-man4mftomf
-    type: manifest
-    steps:
-      - IN: uitest-man1
-      - IN: uitest-man3mftomf
-      
-  - name: uitest-man5
-    type: manifest
-    steps:
-      - IN: uitest-img3
-      - IN: uitest-tg3
-      
-  - name: uitest-man6
-    type: manifest
-    steps:
-      - IN: uitest-man1
-        switch: off
-      - IN: uitest-man2
-        switch: on
-  
-  - name: uitest-man7
-    type: manifest
-    steps:
-      - IN: uitest-img1
-      - IN: uitest-dopts1
-      - IN: uitest-tg1
+      - IN: real-man2
+       # switch: off
+       
+#DEPLOY
 
-  - name: uitest-ddcdeploy
+  - name: real-ecsdeploy
     type: deploy
     steps:
-      - IN: uitest-man1
-      - IN: uitest-dopts1
-      - IN: uitest-ddccluster
+      - IN: real-man1
+      - IN: real-ecscluster
+      
+  - name: real-ecsdeploy2
+    type: deploy
+    steps:
+      - IN: real-release1
+      - IN: real-ecscluster
+      
+# REALESE
+
+  - name: real-release1
+    type: release
+    steps:
+      - IN: real-version2
+      - TASK: managed
+        bump: beta
+      - real-ddcdeploy
