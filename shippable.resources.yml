@@ -66,5 +66,9 @@ resources:
   - name: real-version3
     type: version
     seed:
-      versionName: "11.2.3"
+      versionName: "7.11.4"
       
+  - name: real-version4
+    type: version
+    seed:
+      versionName: "11.2.3"
