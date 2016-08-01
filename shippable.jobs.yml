@@ -32,7 +32,7 @@ jobs:
     type: manifest
     steps:
       - IN: real-img3
-      - IN: real-tg5
+      - IN: real-tg4
       
   #- name: real-man5mftomf
    # type: manifest
