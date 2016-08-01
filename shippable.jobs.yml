@@ -77,6 +77,13 @@ jobs:
       - IN: real-man5
       - IN: real-ecscluster
       
+  - name: real-ecsdeploy6release
+    type: deploy
+    steps:
+      - IN: real-release3
+      - IN: real-release4
+      - IN: real-ecscluster
+      
 # REALESE
 
   - name: real-release1
@@ -111,11 +118,10 @@ jobs:
       - TASK: managed
         bump: alpha
         
-  #- name: real-release5
-   # type: release
-    #steps:
-     # - IN: real-version1
-      #- IN: real-release4
-      #- IN: real-release3
-      #- TASK: managed
-       # bump: major
+  - name: real-release5
+    type: release
+    steps:
+      - IN: real-version1
+      - IN: real-ecsdeploy6release
+      - TASK: managed
+        bump: major
