@@ -14,3 +14,13 @@ triggers:
     type: trigger
     version:
       counter: 1
+      
+  - name: real-tg4
+    type: trigger
+    version:
+      counter: 1
+      
+  - name: real-tg5
+    type: trigger
+    version:
+      counter: 1
