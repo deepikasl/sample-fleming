@@ -6,6 +6,7 @@ jobs:
     type: manifest
     steps:
       - IN: real-img1
+      - IN: real-dopts1
       - IN: real-tg1
       
   - name: real-man2
