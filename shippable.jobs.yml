@@ -43,4 +43,11 @@ jobs:
       - IN: real-ecsdeploy
       - TASK: managed
         bump: beta
-      
+        
+  - name: real-release2
+    type: release
+    steps:
+      - IN: real-version2
+      - IN: real-ecsdeploy2
+      - TASK: managed
+        bump: major
