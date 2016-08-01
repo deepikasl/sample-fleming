@@ -35,11 +35,14 @@ resources:
     seed:
       versionName: "deploy.3"
       
+#DOCKER OPTION
   - name: real-dopts1
     type: dockerOptions
     version:
       memory: 128
-      
+    
+#PARAMS
+
   - name: real-params1
     type: params
     version:
@@ -47,11 +50,16 @@ resources:
         MONGO_API_URL: "localhost:28017"
         TEST: BETA
         pipelinev2: fleming
+        
+#VERSIONS
+
+  - name: real-version1
+    type: version
+    seed:
+      versionName: "1.0.0"
       
-#  - name: uitest-img3
- #   type: image
-  #  integration: plv2-docker
-   # pointer:
-    #  sourceName: "shippabledocker/pipelinev2"
-    #seed:
-     # versionName: "deploy.3"
+  - name: real-version2
+    type: version
+    seed:
+      versionName: "1.0.0-beta"
+      
