@@ -14,10 +14,24 @@ jobs:
       - IN: real-img2
       - IN: real-tg2
       
-  - name: real-man3mftomf
+  - name: real-man3
     type: manifest
     steps:
-      - IN: real-man2
+      - IN: real-img3
+      - IN: real-tg3
+      
+  - name: real-man4
+    type: manifest
+    steps:
+      - IN: real-img3
+      - IN: real-tg4
+      
+  #- name: real-man5mftomf
+   # type: manifest
+    #steps:
+     # - IN: real-man2
+      #- IN: real-man3
+      #- IN: real-tg4
        # switch: off
        
 #DEPLOY
@@ -51,3 +65,28 @@ jobs:
       - IN: real-ecsdeploy2
       - TASK: managed
         bump: major
+        
+  - name: real-release3
+    type: release
+    steps:
+      - IN: real-version3
+      - IN: real-man2
+      - TASK: managed
+        bump: beta
+        
+  - name: real-release4
+    type: release
+    steps:
+      - IN: real-version4
+      - IN: real-man3
+      - TASK: managed
+        bump: alpha
+        
+  #- name: real-release5
+   # type: release
+    #steps:
+     # - IN: real-version1
+      #- IN: real-release4
+      #- IN: real-release3
+      #- TASK: managed
+       # bump: major
