@@ -8,12 +8,12 @@ triggers:
   - name: real-tg2
     type: trigger
     version:
-      counter: 4
+      counter: 5
       
   - name: real-tg3
     type: trigger
     version:
-      counter: 3
+      counter: 5
       
   - name: real-tg4
     type: trigger
