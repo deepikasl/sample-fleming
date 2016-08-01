@@ -13,12 +13,14 @@ jobs:
     steps:
       - IN: real-img2
       - IN: real-dopts1
+      - IN: real-params1
       - IN: real-tg2
       
   - name: real-man3
     type: manifest
     steps:
       - IN: real-img3
+      - IN: real-dopts1
       - IN: real-params1
       - IN: real-tg3
       
