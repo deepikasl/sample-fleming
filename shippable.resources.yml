@@ -61,5 +61,5 @@ resources:
   - name: real-version2
     type: version
     seed:
-      versionName: "1.0.0-beta"
+      versionName: "1.2.3-beta"
       
