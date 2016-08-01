@@ -2,7 +2,7 @@ triggers:
    - name: srl-tg1
      type: trigger
      version:
-       counter: 2
+       counter: 3
        
    - name: srl-tg2
      type: trigger
