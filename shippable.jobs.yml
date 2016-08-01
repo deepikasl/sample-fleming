@@ -42,4 +42,4 @@ jobs:
       - IN: real-version2
       - TASK: managed
         bump: beta
-      - real-ddcdeploy
+      - IN: real-ddcdeploy
