@@ -42,6 +42,19 @@ jobs:
       - IN: real-img3
       - IN: real-tg4
       
+  - name: real-man6
+    type: manifest
+    steps:
+      - IN: real-img3
+      - IN: real-tg5
+    flags:
+      - real-man6
+      
+  - name: real-man7
+    type: manifest
+    steps:
+      - IN: real-release6
+      
   #- name: real-man5mftomf
    # type: manifest
     #steps:
@@ -129,5 +142,21 @@ jobs:
     steps:
       - IN: real-version1
       - IN: real-ecsdeploy6release
+      - TASK: managed
+        bump: major
+        
+  - name: real-release6
+    type: release
+    steps:
+      - IN: real-version6
+      - IN: real-man6
+      - TASK: managed
+        bump: rc
+
+  - name: real-release7
+    type: release
+    steps:
+      - IN: real-version5
+      - IN: real-man7
       - TASK: managed
         bump: major
