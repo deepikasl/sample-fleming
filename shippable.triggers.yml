@@ -24,3 +24,8 @@ triggers:
     type: trigger
     version:
       counter: 5
+      
+  - name: realddc-tg1
+    type: trigger
+    version:
+      counter: 1
