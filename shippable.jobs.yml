@@ -63,6 +63,8 @@ jobs:
     steps:
       - IN: realddc-img1
       - IN: realddc-tg1
+    flags:
+      - realddc-man1
       
   #- name: real-man5mftomf
    # type: manifest
