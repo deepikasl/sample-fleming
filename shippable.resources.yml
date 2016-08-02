@@ -1,60 +1,80 @@
 resources:
-
-#CLUSTERS
-
-  - name: srl-ddccluster
-    type: cluster
-    integration: plv2-ddc
-    pointer:
-      sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
-        
-#IMAGES
-        
-  - name: srl-img1
+  - name: nginx-image-serialCheck
     type: image
-    integration: plv2-docker
+    integration: "plv2-docker"
     pointer:
-      sourceName: "shippabledocker/pipelinev2"
+      sourceName: "library/nginx"
+    seed:
+      versionName: latest
+
+  - name: nginx-params-serialCheck
+    type: params
+    version:
+      params:
+        mode: dev
+        api_url: localhost:50000
+
+  - name: nginx-opts-serialCheck
+    type: dockerOptions
+    version:
+      memory: 500
+
+  - name: ecsStaging-serialCheck
+    type: cluster
+    integration: "plv2-ecs"
+    pointer:
+      sourceName : "testCL" #name of the cluster we are deploying
+      region: "us-west-2"
+
+  - name: stagingSlack-serialCheck
+    type: notification
+    integration: "plv2-slack"
+    pointer:
+      recipients:
+       # - "#test_interns"
+        - "@shiphitchcock1"
+
+  - name: ecsProduction-serialCheck
+    type: cluster
+    integration: "plv2-ecs"
+    pointer:
+      sourceName: "testCL"
+      region: "us-west-2"
+
+  - name: prodSlack-serialCheck
+    type: notification
+    integration: "plv2-slack"
+    pointer:
+      recipients:
+       # - "#pipeline_public"
+        - "@shiphitchcock1"
+
+  - name: simple-image-serialCheck
+    type: image
+    integration: "plv2-docker"
+    pointer:
+      sourceName: "shiphitchcock1/pipelinev2"
     seed:
       versionName: "deploy.1"
-      
-  - name: srl-img2
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.2"
-      
-  - name: srl-img3
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.3"
-      
-#kickStart
 
-  #- name: kickstartresource
-#    type: kickStart
-#    version: 
-#      count: 1
-        
-#GITREPO:
+  - name: simple-params-serialCheck
+    type: params
+    version:
+      params:
+        FOO: "test foo"
+        BAR: "test bar"
+        MODE: "dev"
+        SELF_URL: "http://localhost:8888"
 
-  #- name: "gitrepo_plv2notifications-notifyemailslack"
-   # type: gitRepo
-    #integration: "shiphitchcock1-github"
-    #pointer:
-     # sourceName: "shiphitchcock1/plv2-notifications"
-      #branch: "notify-emailslack"
-      
-  #- name: "syncRepo_plv2notifications-notifyemailslack"
-   # type: syncRepo
-  #  integration: "shiphitchcock1-github"
-   # pointer:
-    #  sourceName: "shiphitchcock1/plv2-notifications"
-     # branch: "notify-emailslack"
-     
+  - name: simple-opts-serialCheck
+    type: dockerOptions
+    version:
+      memory: 120
+      cpuShares: 18
+      portMappings:
+        - "80:8888"
 
+  - name: simpleReplicas-serialCheck
+    type: replicas
+    version:
+      count: 1
