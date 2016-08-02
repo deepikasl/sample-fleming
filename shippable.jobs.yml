@@ -62,6 +62,7 @@ jobs:
     type: manifest
     steps:
       - IN: realddc-img1
+      - IN: realddc-dopts1
       - IN: realddc-tg1
     flags:
       - realddc-man1
