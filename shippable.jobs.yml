@@ -15,7 +15,7 @@ jobs:
     steps:
       - IN: real-img2
       - IN: real-dopts1
-      - IN: real-params1
+      #- IN: real-params1
       - IN: real-tg2
     flags: 
       - real-man2
