@@ -79,3 +79,13 @@ resources:
     type: version
     seed:
       versionName: "11.2.3"
+      
+  - name: real-version5
+    type: version
+    seed:
+      versionName: "5.0.4"
+      
+  - name: real-version6
+    type: version
+    seed:
+      versionName: "11.2.3"
