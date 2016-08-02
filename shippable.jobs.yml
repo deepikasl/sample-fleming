@@ -46,8 +46,8 @@ jobs:
     type: manifest
     steps:
       - IN: real-img3
-      - IN: real-dopts1
-      - IN: real-params1
+     # - IN: real-dopts1
+      #- IN: real-params1
       - IN: real-scale1
       - IN: real-tg5
     flags:
