@@ -127,7 +127,7 @@ resources:
     seed:
       versionName: "5.0.4"
       
-  - name: realddc-version1
+  - name: realddc-version2
     type: version
     seed:
       versionName: "11.2.3"
