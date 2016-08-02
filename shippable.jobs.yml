@@ -1,24 +1,43 @@
 jobs:
+  - name: simple-mani-serialCheck
+    type: manifest
+    steps:
+      - IN: stagingTrigger-serialCheck
+      - IN: simple-params-serialCheck
+      - IN: simple-image-serialCheck
+      - IN: simple-opts-serialCheck
+    on_failure:
+      - NOTIFY: stagingSlack-serialCheck
 
-#MANIFESTS
-      
-  - name: srl-man1
+  - name: nginx-mani-serialCheck
     type: manifest
     steps:
-      - IN: srl-img1
-      - IN: srl-tg1
-      
-  - name: srl-man2
-    type: manifest
-    steps:
-      - IN: srl-img2
-      - IN: srl-tg1
-      
-# DEPLOYMENTS  
-        
-  - name: srl-ddcdeploy
+      - IN: stagingTrigger-serialCheck
+      - IN: nginx-image-serialCheck
+      - IN: nginx-params-serialCheck
+      - IN: nginx-opts-serialCheck
+    on_failure:
+      - NOTIFY: stagingSlack-serialCheck
+
+  - name: staging-dep-serialCheck
     type: deploy
     steps:
-      - IN: srl-man1
-      - IN: srl-man2
-      - IN: srl-ddccluster
+      - IN: simple-mani-serialCheck
+      - IN: nginx-mani-serialCheck
+      - IN: simpleReplicas-serialCheck
+      - IN: ecsStaging-serialCheck
+      - TASK: managed
+        deployMethod: upgrade
+    on_failure:
+      - NOTIFY: stagingSlack-serialCheck
+
+
+  - name: parallel-dep-serialCheck
+    type: deploy
+    steps:
+      - IN: simple-mani-serialCheck
+      - IN: ecsStaging-serialCheck
+      - TASK: managed
+        deployMethod: upgrade
+    on_failure:
+      - NOTIFY: stagingSlack-serialCheck
