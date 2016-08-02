@@ -47,6 +47,7 @@ jobs:
     steps:
       - IN: real-img3
       - IN: real-dopts1
+      - IN: real-params1
       - IN: real-tg5
     flags:
       - real-man6
