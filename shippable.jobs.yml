@@ -45,10 +45,10 @@ jobs:
   - name: real-man6
     type: manifest
     steps:
-      - IN: real-img3
+      - IN: realman-img1
      # - IN: real-dopts1
-      - IN: real-params1
-      - IN: real-scale1
+      - IN: realman-params1
+      - IN: realman-scale1
       - IN: real-tg5
     flags:
       - real-man6
