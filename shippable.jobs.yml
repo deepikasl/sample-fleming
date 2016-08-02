@@ -58,6 +58,12 @@ jobs:
     steps:
       - IN: real-release6
       
+  - name: realddc-man1
+    type: manifest
+    steps:
+      - IN: realddc-img1
+      - IN: realddc-tg1
+      
   #- name: real-man5mftomf
    # type: manifest
     #steps:
@@ -105,6 +111,18 @@ jobs:
       - IN: real-release3
       - IN: real-release4
       - IN: real-ecscluster
+      
+  - name: real-ddcdeploy1
+    type: deploy
+    steps:
+      - IN: realddc-man1
+      - IN: real-ddccluster
+      
+  - name: real-ddcdeploy2
+    type: deploy
+    steps:
+      - IN: realddc-release1
+      - IN: real-ddccluster
       
 # REALESE
 
@@ -161,5 +179,21 @@ jobs:
     steps:
       - IN: real-version5
       - IN: real-man7
+      - TASK: managed
+        bump: major
+        
+  - name: realddc-release1
+    type: release
+    steps:
+      - IN: realddc-version2
+      - IN: real-ddcdeploy1
+      - TASK: managed
+        bump: rc
+
+  - name: realddc-release2
+    type: release
+    steps:
+      - IN: realddc-version1
+      - IN: real-ddcdeploy2
       - TASK: managed
         bump: major
