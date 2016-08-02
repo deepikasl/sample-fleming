@@ -8,6 +8,12 @@ resources:
     pointer:
       sourceName : "testCL"
       region: "us-west-2"
+      
+  - name: real-ddccluster
+    type: cluster
+    integration: plv2-ddc
+    pointer:
+      sourceName : "default"
 
 #IMAGES
         
@@ -35,8 +41,21 @@ resources:
     seed:
       versionName: "deploy.3"
       
+  - name: realddc-img1
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.1"
+      
 #DOCKER OPTION
   - name: real-dopts1
+    type: dockerOptions
+    version:
+      memory: 128
+      
+  - name: realddc-dopts1
     type: dockerOptions
     version:
       memory: 128
@@ -51,9 +70,22 @@ resources:
         TEST: BETA
         pipelinev2: fleming
         
+  - name: realddc-params1
+    type: params
+    version:
+      params:
+        MONGO_API_URL: "localhost:28017"
+        TEST: BETA
+        pipelinev2: fleming
+        
 #REPLICAS
 
   - name: real-scale1
+    type: replicas
+    version:
+      count: 1
+      
+  - name: realddc-scale1
     type: replicas
     version:
       count: 1
@@ -86,6 +118,16 @@ resources:
       versionName: "5.0.4"
       
   - name: real-version6
+    type: version
+    seed:
+      versionName: "11.2.3"
+      
+  - name: realddc-version1
+    type: version
+    seed:
+      versionName: "5.0.4"
+      
+  - name: realddc-version1
     type: version
     seed:
       versionName: "11.2.3"
