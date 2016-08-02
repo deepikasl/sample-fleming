@@ -51,6 +51,13 @@ resources:
         TEST: BETA
         pipelinev2: fleming
         
+#REPLICAS
+
+  - name: real-scale1
+    type: replicas
+    version:
+      count: 1
+        
 #VERSIONS
 
   - name: real-version1
