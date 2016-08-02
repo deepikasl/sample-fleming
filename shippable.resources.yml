@@ -41,6 +41,14 @@ resources:
     seed:
       versionName: "deploy.3"
       
+  - name: realman-img1
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.3"
+      
   - name: realddc-img1
     type: image
     integration: plv2-docker
@@ -51,6 +59,11 @@ resources:
       
 #DOCKER OPTION
   - name: real-dopts1
+    type: dockerOptions
+    version:
+      memory: 128
+      
+  - name: realman-dopts1
     type: dockerOptions
     version:
       memory: 128
@@ -78,6 +91,14 @@ resources:
         TEST: BETA
         pipelinev2: fleming
         
+  - name: realman-params1
+    type: params
+    version:
+      params:
+        MONGO_API_URL: "localhost:28017"
+        TEST: BETA
+        pipelinev2: fleming
+        
 #REPLICAS
 
   - name: real-scale1
@@ -86,6 +107,11 @@ resources:
       count: 1
       
   - name: realddc-scale1
+    type: replicas
+    version:
+      count: 1
+      
+  - name: realman-scale1
     type: replicas
     version:
       count: 1
