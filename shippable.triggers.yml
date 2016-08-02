@@ -23,4 +23,4 @@ triggers:
   - name: real-tg5
     type: trigger
     version:
-      counter: 1
+      counter: 3
