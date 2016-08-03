@@ -2,33 +2,33 @@ resources:
 
 #CLUSTERS
 
-  - name: gr-ddccluster
+  - name: sr-ddccluster
     type: cluster
     integration: plv2-ddc
     pointer:
       sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
 
-  - name: gr-dclcluster
+  - name: sr-dclcluster
     type: cluster
     integration: plv2-dcl
     pointer:
      sourceName : "cluster-dcl"
 
-  - name: gr-ecscluster
+  - name: sr-ecscluster
     type: cluster
     integration: plv2-ecs
     pointer:
       sourceName : "testCL"
       region: "us-west-2"
       
-  - name: gr-gkecluster
+  - name: sr-gkecluster
     type: cluster
     integration: plv2-gke
     pointer:
       sourceName: "small-cluster" #name of the cluster we are deploying.
       region: "us-east1-d"
       
-  - name: gr-tripubcluster
+  - name: sr-tripubcluster
     type: cluster
     integration: plv2-tripub
     pointer:
@@ -37,14 +37,14 @@ resources:
       
 #VERSIONS
 
-  - name: gr-version
+  - name: sr-version
     type: version
     seed:
       versionName: "1.2.123-beta"
       
 #NOTIFICATIONS
       
-  - name: gr-slack
+  - name: sr-slack
     type: notification
     integration: "plv2-slackcock1"
     pointer:
@@ -53,7 +53,7 @@ resources:
         - "#pipeline-public"
         - "@shiphitchcock1"
 
-  - name: gr-email
+  - name: sr-email
     type: notification
     integration: "plv2-emailcock1"
     pointer:
@@ -63,7 +63,7 @@ resources:
         
 #IMAGES
         
-  - name: gr-img1
+  - name: sr-img1
     type: image
     integration: plv2-docker
     pointer:
@@ -71,7 +71,7 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: gr-img2
+  - name: sr-img2
     type: image
     integration: plv2-docker
     pointer:
@@ -81,7 +81,7 @@ resources:
       
 # DOCKER OPTIONS:
   
-  - name: gr-dopts1
+  - name: sr-dopts1
     type: dockerOptions
     version:
       memory: 128
@@ -89,7 +89,7 @@ resources:
         
 #PARAMS
 
-  - name: gr-params1
+  - name: sr-params1
     type: params
     version:
       params:
@@ -99,19 +99,19 @@ resources:
 
 #REPLICAS
       
-  - name: gr-scale2
+  - name: sr-scale2
     type: replicas
     version:
       count: 2
 
-  - name: gr-scale3
+  - name: sr-scale3
     type: replicas
     version:
       count: 3
       
 #TIME
 
-  - name: gr-timeresource
+  - name: sr-timeresource
     type: time
     seed:
       interval: "8 8 8 8 *"
