@@ -19,7 +19,7 @@ jobs:
       - IN: gr-img1
       - IN: gr-tg1
       
-  - name: gr-man1
+  - name: gr-man2
     type: manifest
     steps:
       - IN: gr-img2
@@ -38,6 +38,6 @@ jobs:
   - name: gr-ecsdeploybg
     type: deploy
     steps:
-      - IN: gr-man4entrypoint
+      - IN: gr-man2
       - IN: gr-ecscluster
       
