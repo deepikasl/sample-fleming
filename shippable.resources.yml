@@ -2,68 +2,30 @@ resources:
 
 #CLUSTERS
 
-  - name: gr-ddccluster
-    type: cluster
-    integration: plv2-ddc
-    pointer:
-      sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
-
-  - name: gr-dclcluster
-    type: cluster
-    integration: plv2-dcl
-    pointer:
-     sourceName : "cluster-dcl"
-
-  - name: gr-ecscluster
+  - name: ecs-cluster
     type: cluster
     integration: plv2-ecs
     pointer:
       sourceName : "testCL"
       region: "us-west-2"
       
-  - name: gr-gkecluster
+  - name: ecsclu1-invalidint
     type: cluster
-    integration: plv2-gke
+    integration: plv2-ecstest
     pointer:
-      sourceName: "small-cluster" #name of the cluster we are deploying.
-      region: "us-east1-d"
+      sourceName : "testCL"
+      region: "us-west-2"
       
-  - name: gr-tripubcluster
+  - name: ecsclu2-invalidclu
     type: cluster
-    integration: plv2-tripub
+    integration: plv2-ecstest
     pointer:
-      sourceName: "default" # we can give anything it deploy instances based on region not by cluster name
-      region: "us-east-2"
-      
-#VERSIONS
-
-  - name: gr-version
-    type: version
-    seed:
-      versionName: "1.2.123-beta"
-      
-#NOTIFICATIONS
-      
-  - name: gr-slack
-    type: notification
-    integration: "plv2-slackcock1"
-    pointer:
-      recipients:
-        - "#pipeline-pvt"
-        - "#pipeline-public"
-        - "@shiphitchcock1"
-
-  - name: gr-email
-    type: notification
-    integration: "plv2-emailcock1"
-    pointer:
-      recipients: 
-        - "varsha@shippable.com"
-        - "shiphitchcock1@gmail.com"
+      sourceName : "testbetacl"
+      region: "us-west-2"
         
 #IMAGES
         
-  - name: gr-img1
+  - name: ecs-img1
     type: image
     integration: plv2-docker
     pointer:
@@ -71,17 +33,17 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: gr-img2
+  - name: ecsimg1-tagdoesntexist
     type: image
     integration: plv2-docker
     pointer:
       sourceName: "shiphitchcock1/betaci_nod_limitless_pl"
     seed:
-      versionName: "deploy.5"
+      versionName: "nothing.5"
       
 # DOCKER OPTIONS:
   
-  - name: gr-dopts1
+  - name: ecs-dopts1
     type: dockerOptions
     version:
       memory: 128
@@ -89,7 +51,7 @@ resources:
         
 #PARAMS
 
-  - name: gr-params1
+  - name: ecs-params1
     type: params
     version:
       params:
@@ -99,44 +61,7 @@ resources:
 
 #REPLICAS
       
-  - name: sr-scale2
+  - name: ecs-scale2
     type: replicas
     version:
       count: 2
-
-  - name: sr-scale3
-    type: replicas
-    version:
-      count: 3
-      
-#TIME
-
-  - name: gr-timeresource
-    type: time
-    seed:
-      interval: "8 8 8 8 *"
-      
-#kickStart
-
-  #- name: kickstartresource
-#    type: kickStart
-#    version: 
-#      count: 1
-        
-#GITREPO:
-
-  #- name: "gitrepo_plv2notifications-notifyemailslack"
-   # type: gitRepo
-    #integration: "shiphitchcock1-github"
-    #pointer:
-     # sourceName: "shiphitchcock1/plv2-notifications"
-      #branch: "notify-emailslack"
-      
-  #- name: "syncRepo_plv2notifications-notifyemailslack"
-   # type: syncRepo
-  #  integration: "shiphitchcock1-github"
-   # pointer:
-    #  sourceName: "shiphitchcock1/plv2-notifications"
-     # branch: "notify-emailslack"
-     
-
