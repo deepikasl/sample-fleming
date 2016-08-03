@@ -1,43 +1,51 @@
 jobs:
-
-#RELEASE
-
-  - name: gr-release
-    type: release
-    steps:
-      - IN: gr-version
-      - IN: gr-tg1
-      - TASK: managed
-        bump: beta
-    #- IN: notify-man1cnrimg
-      
 #MANIFESTS
       
-  - name: gr-man1
+  - name: ecs-man1
     type: manifest
     steps:
-      - IN: gr-img1
-      - IN: gr-tg1
+      - IN: ecs-img1
+      - IN: ecs-tg1
       
-  - name: gr-man2
+  - name: ecsman2-invalidimg
     type: manifest
     steps:
-      - IN: gr-img2
-      - IN: gr-tg2
+      - IN: ecsimg4-tagdoesntexist
+      - IN: ecs-tg2
+      
+  - name: ecsman3-invalid
+    type: manifest
+    steps:
+      - IN: ecs-img2
+        versionNumber: 369
+      - IN: ecs-tg3
 
 # DEPLOYMENTS 
 
-  - name: gr-ecsdeployup
+  - name: ecs-deploy1up
     type: deploy
     steps:
-      - IN: gr-man1
+      - IN: ecs-man1
       - IN: gr-ecscluster
       - TASK: managed
         deployMethod: upgrade
       
-  - name: gr-ecsdeploybg
+  - name: ecs-deploy2bginvalidclu
     type: deploy
     steps:
-      - IN: gr-man2
-      - IN: gr-ecscluster
+      - IN: ecs-man1
+      - IN: ecsclu2-invalidclu
       
+  - name: ecs-deploy3upinvalidimg
+    type: deploy
+    steps:
+      - IN: ecsman2-invalidimg
+      - IN: ecs-cluster
+      - TASK: managed
+        deployMethod: upgrade
+
+  - name: ecs-deploy3upinvalidimg
+    type: deploy
+    steps:
+      - IN: ecsman3-invalid
+      - IN: ecs-cluster
