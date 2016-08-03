@@ -37,14 +37,14 @@ resources:
       
 #VERSIONS
 
-  - name: fl-version
+  - name: gr-version
     type: version
     seed:
       versionName: "1.2.123-beta"
       
 #NOTIFICATIONS
       
-  - name: fl-slack
+  - name: gr-slack
     type: notification
     integration: "plv2-slackcock1"
     pointer:
@@ -53,7 +53,7 @@ resources:
         - "#pipeline-public"
         - "@shiphitchcock1"
 
-  - name: fl-email
+  - name: gr-email
     type: notification
     integration: "plv2-emailcock1"
     pointer:
@@ -63,7 +63,7 @@ resources:
         
 #IMAGES
         
-  - name: fl-img1
+  - name: gr-img1
     type: image
     integration: plv2-docker
     pointer:
@@ -71,7 +71,7 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: fl-img2
+  - name: gr-img2
     type: image
     integration: plv2-docker
     pointer:
@@ -81,7 +81,7 @@ resources:
       
 # DOCKER OPTIONS:
   
-  - name: fltp-dopts1
+  - name: gr-dopts1
     type: dockerOptions
     version:
       memory: 128
@@ -89,7 +89,7 @@ resources:
         
 #PARAMS
 
-  - name: fl-params1
+  - name: gr-params1
     type: params
     version:
       params:
@@ -99,19 +99,19 @@ resources:
 
 #REPLICAS
       
-  - name: fl-scale2
+  - name: gr-scale2
     type: replicas
     version:
       count: 2
 
-  - name: fl-scale3
+  - name: gr-scale3
     type: replicas
     version:
       count: 3
       
 #TIME
 
-  - name: fl-timeresource
+  - name: gr-timeresource
     type: time
     seed:
       interval: "8 8 8 8 *"
