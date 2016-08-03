@@ -26,7 +26,7 @@ jobs:
     type: deploy
     steps:
       - IN: ecs-man1
-      - IN: gr-ecscluster
+      - IN: ecs-cluster
       - TASK: managed
         deployMethod: upgrade
       
@@ -44,7 +44,7 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
 
-  - name: ecs-deploy3upinvalidimg
+  - name: ecs-deploy4bgmani
     type: deploy
     steps:
       - IN: ecsman3-invalid
