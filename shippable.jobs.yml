@@ -2,42 +2,41 @@ jobs:
 
 #RELEASE
 
-  - name: gr-release
+  - name: sr-release
     type: release
     steps:
-      - IN: gr-version
-      - IN: gr-tg1
+      - IN: sr-version
+      - IN: sr-tg1
       - TASK: managed
         bump: beta
     #- IN: notify-man1cnrimg
       
 #MANIFESTS
       
-  - name: gr-man1
+  - name: sr-man1
     type: manifest
     steps:
-      - IN: gr-img1
-      - IN: gr-tg1
+      - IN: sr-img1
+      - IN: sr-tg1
       
-  - name: gr-man1
+  - name: sr-man2
     type: manifest
     steps:
-      - IN: gr-img2
-      - IN: gr-tg2
+      - IN: sr-img2
+      - IN: sr-tg2
 
 # DEPLOYMENTS 
 
-  - name: gr-ecsdeployup
+  - name: sr-ecsdeployup
     type: deploy
     steps:
-      - IN: gr-man1
-      - IN: gr-ecscluster
+      - IN: sr-man1
+      - IN: sr-ecscluster
       - TASK: managed
         deployMethod: upgrade
       
-  - name: gr-ecsdeploybg
+  - name: sr-ecsdeploybg
     type: deploy
     steps:
-      - IN: gr-man4entrypoint
-      - IN: gr-ecscluster
-      
+      - IN: sr-man2
+      - IN: sr-ecscluster
