@@ -2,33 +2,33 @@ resources:
 
 #CLUSTERS
 
-  - name: fl-ddccluster
+  - name: gr-ddccluster
     type: cluster
     integration: plv2-ddc
     pointer:
       sourceName : "nothing" #we can anything because it is mandatory but ddc doesnot have clusters
 
-  - name: fl-dclcluster
+  - name: gr-dclcluster
     type: cluster
     integration: plv2-dcl
     pointer:
      sourceName : "cluster-dcl"
 
-  - name: fl-ecscluster
+  - name: gr-ecscluster
     type: cluster
     integration: plv2-ecs
     pointer:
       sourceName : "testCL"
       region: "us-west-2"
       
-  - name: fl-gkecluster
+  - name: gr-gkecluster
     type: cluster
     integration: plv2-gke
     pointer:
       sourceName: "small-cluster" #name of the cluster we are deploying.
       region: "us-east1-d"
       
-  - name: fl-tripubcluster
+  - name: gr-tripubcluster
     type: cluster
     integration: plv2-tripub
     pointer:
@@ -75,7 +75,7 @@ resources:
     type: image
     integration: plv2-docker
     pointer:
-      sourceName: "shippabledocker/pipelinev2"
+      sourceName: "shiphitchcock1/betaci_nod_limitless_pl"
     seed:
       versionName: "deploy.5"
       
