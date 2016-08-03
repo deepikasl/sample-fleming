@@ -278,25 +278,23 @@ resources:
       
 #kickStart
 
-  #- name: kickstartresource
-#    type: kickStart
-#    version: 
-#      count: 1
+  - name: fl-kickstartr
+    type: kickStart
+    version: 
+      count: 1
         
 #GITREPO:
 
-  #- name: "gitrepo_plv2notifications-notifyemailslack"
-   # type: gitRepo
-    #integration: "shiphitchcock1-github"
-    #pointer:
-     # sourceName: "shiphitchcock1/plv2-notifications"
-      #branch: "notify-emailslack"
+  - name: "gr_ci-test2/sample-fleming_gr-rsync"
+    type: gitRepo
+    integration: "github"
+    pointer:
+      sourceName: "ci-test2/sample-fleming"
+      branch: "gitrepo"
       
-  #- name: "syncRepo_plv2notifications-notifyemailslack"
-   # type: syncRepo
-  #  integration: "shiphitchcock1-github"
-   # pointer:
-    #  sourceName: "shiphitchcock1/plv2-notifications"
-     # branch: "notify-emailslack"
-     
-
+  - name: "sr_ci-test2/sample-fleming_sr-rsync"
+    type: syncRepo
+    integration: "github"
+    pointer:
+      sourceName: "ci-test2/sample-fleming"
+      branch: "syncrepo"
