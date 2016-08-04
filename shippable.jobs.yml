@@ -13,11 +13,11 @@ jobs:
       
 #MANIFESTS
       
-  - name: sr-man1
-    type: manifest
-    steps:
-      - IN: sr-img1
-      - IN: sr-tg1
+ # - name: sr-man1
+  #  type: manifest
+   # steps:
+    #  - IN: sr-img1
+     # - IN: sr-tg1
       
   - name: sr-man2
     type: manifest
