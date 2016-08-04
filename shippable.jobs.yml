@@ -17,13 +17,13 @@ jobs:
       - IN: rs-img1
       - IN: rs-tg1
       
-  - name: rs-ecsdeployup
-    type: deploy
-    steps:
-      - IN: rs-man1
-      - IN: rs-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
+  #- name: rs-ecsdeployup
+   # type: deploy
+    #steps:
+     # - IN: rs-man1
+      #- IN: rs-ecscluster
+      #- TASK: managed
+       # deployMethod: upgrade
       
   - name: rs-inrunsh
     type: runSh
