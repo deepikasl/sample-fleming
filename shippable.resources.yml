@@ -14,12 +14,12 @@ resources:
     pointer:
      sourceName : "cluster-dcl"
 
-  - name: fl-ecscluster
-    type: cluster
-    integration: plv2-ecs
-    pointer:
-      sourceName : "testCL"
-      region: "us-west-2"
+  #- name: fl-ecscluster
+   # type: cluster
+    #integration: plv2-ecs
+    #pointer:
+     # sourceName : "testCL"
+      #region: "us-west-2"
       
   - name: fl-gkecluster
     type: cluster
