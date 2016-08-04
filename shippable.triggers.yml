@@ -7,7 +7,7 @@ triggers:
    - name: rs-tg2
      type: trigger
      version:
-       counter: 0
+       counter: 1
        
    - name: rs-tg3
      type: trigger
