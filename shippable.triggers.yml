@@ -32,7 +32,7 @@ triggers:
    - name: fl-tg7
      type: trigger
      version:
-       counter: 1
+       counter: 2
        
    - name: fl-tg8
      type: trigger
