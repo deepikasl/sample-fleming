@@ -19,6 +19,15 @@ jobs:
       - IN: fl-img1
       - IN: fl-tg1
       
+  - name: fl-man2
+    type: manifest
+    steps:
+      - IN: fl-img2
+      - IN: fltp-dopts2
+      - IN: fl-params2
+      - IN: fl-params
+      - IN: fl-tg2
+      
   #- name: fl-man2multiimg
    # type: manifest
     #steps:
