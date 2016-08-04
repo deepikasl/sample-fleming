@@ -1,51 +1,81 @@
 jobs:
 #MANIFESTS
       
-  - name: ecs-man1
+  - name: gke-man1
     type: manifest
     steps:
-      - IN: ecs-img1
-      - IN: ecs-tg1
+      - IN: gke-img1
+      - IN: gke-tg1
       
-  - name: ecsman2-invalidimg
+  - name: gke-man2
     type: manifest
     steps:
-      - IN: ecsimg4-tagdoesntexist
-      - IN: ecs-tg2
+      - IN: gke-img2
+      - IN: gke-tg2
       
-  - name: ecsman3-invalid
+  - name: gkeman3-invalidimg
     type: manifest
     steps:
-      - IN: ecs-img2
+      - IN: gkeimg4-tagdoesntexist
+      - IN: gke-tg3
+      
+  - name: gkeman4-invalid
+    type: manifest
+    steps:
+      - IN: gke-img2
         versionNumber: 369
-      - IN: ecs-tg3
+      - IN: gke-tg4
+      
+  - name: gke-man5mftomf
+    type: manifest
+    steps:
+      - IN: gke-img1
+      - IN: gke-man2
+      
+  - name: gke-man6multiimg
+    type: manifest
+    steps:
+      - IN: gke-img1
+      - IN: gke-img2
 
 # DEPLOYMENTS 
 
-  - name: ecs-deploy1up
+  - name: gke-deploy1up
     type: deploy
     steps:
-      - IN: ecs-man1
-      - IN: ecs-cluster
+      - IN: gke-man1
+      - IN: gke-cluster
       - TASK: managed
         deployMethod: upgrade
       
-  - name: ecs-deploy2bginvalidclu
+  - name: gke-deploy2bginvalidclu
     type: deploy
     steps:
-      - IN: ecs-man1
-      - IN: ecsclu2-invalidclu
+      - IN: gke-man1
+      - IN: gkeclu2-invalidclu
       
-  - name: ecs-deploy3upinvalidimg
+  - name: gke-deploy3upinvalidimg
     type: deploy
     steps:
-      - IN: ecsman2-invalidimg
-      - IN: ecs-cluster
+      - IN: gkeman3-invalidimg
+      - IN: gke-cluster
       - TASK: managed
         deployMethod: upgrade
 
-  - name: ecs-deploy4bgmani
+  - name: gke-deploy4bginvalidmani
     type: deploy
     steps:
-      - IN: ecsman3-invalid
-      - IN: ecs-cluster
+      - IN: gkeman4-invalid
+      - IN: gke-cluster
+      
+  - name: gke-deploy5bgmultiimgmani
+    type: deploy
+    steps:
+      - IN: gke-man6multiimg
+      - IN: gke-cluster
+  
+   - name: gke-deploy5bgmftomf
+    type: deploy
+    steps:
+      - IN: gke-man5mftomf
+      - IN: gke-cluster  
