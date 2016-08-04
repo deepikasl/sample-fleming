@@ -23,7 +23,7 @@ jobs:
       - IN: "rs-sample-scriptrunsh"
       - TASK:
         - script: ls
-        - script: ./GET/rs-sample-scriptrunsh/rs-sample-scriptrunsh/echo.sh
+        - script: ./IN/rs-sample-scriptrunsh/rs-sample-scriptrunsh/echo.sh
       - on_success:
         - echo 'This block executes after TASK section executes successfully'
        # - NOTIFY: slackNotifcation
