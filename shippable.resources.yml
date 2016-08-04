@@ -271,17 +271,17 @@ resources:
       
 #TIME
 
-  - name: fl-timeresource
-    type: time
-    seed:
-      interval: "8 8 8 8 *"
+  #- name: fl-timeresource
+   # type: time
+    #seed:
+     # interval: "8 8 8 8 *"
       
 #kickStart
 
-  - name: fl-kickstartr
-    type: kickStart
-    version: 
-      count: 1
+ # - name: fl-kickstartr
+  #  type: kickStart
+   # version: 
+    #  count: 1
         
 #GITREPO:
 
