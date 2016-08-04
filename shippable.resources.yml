@@ -292,9 +292,9 @@ resources:
      # sourceName: "ci-test2/sample-fleming"
       #branch: "gitrepo"
       
-  - name: "flsr_sample-fleming_sr-rsync"
-    type: syncRepo
-    integration: "github"
-    pointer:
-      sourceName: "ci-test2/sample-fleming"
-      branch: "syncrepo"
+  #- name: "flsr_sample-fleming_sr-rsync"
+   # type: syncRepo
+    #integration: "github"
+    #pointer:
+     # sourceName: "ci-test2/sample-fleming"
+      #branch: "syncrepo"
