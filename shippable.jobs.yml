@@ -134,8 +134,8 @@ jobs:
       - IN: fl-ddccluster
       
 #rSync
-  - name: fl-rsyncjob
-    type: rSync
-    steps:
-      - IN: "flsr_sample-fleming_sr-rsync"
-      - IN: fl-tg6
+#  - name: fl-rsyncjob
+ #   type: rSync
+  #  steps:
+   #   - IN: "flsr_sample-fleming_sr-rsync"
+    #  - IN: fl-tg6
