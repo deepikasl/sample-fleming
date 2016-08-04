@@ -35,7 +35,7 @@ jobs:
         #- script: ./IN/rs-sample-script/rs-sample-script/echo.sh
       #- on_success:
        # - echo 'This block executes after TASK section executes successfully'
-       # - NOTIFY: slackNotifcation
+       # - NOTIFY: rs-slack
        
   - name: custom-outrunsh
     type: runSh
@@ -47,3 +47,4 @@ jobs:
         - script: "echo 'anotherProperty=foo' >>  /build/state/rs-img1.env" # next line will be this in the file mongo-image.env
       - OUT: rs-img1
       - IN: rs-tg3
+      - NOTIFY: rs-slack
