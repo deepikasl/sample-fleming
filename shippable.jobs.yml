@@ -33,13 +33,13 @@ jobs:
 
 #DEPLOYMENTS 
 
-  - name: sr-ecsdeployup
-    type: deploy
-    steps:
-      - IN: sr-man1
-      - IN: sr-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
+ # - name: sr-ecsdeployup
+  #  type: deploy
+   # steps:
+    #  - IN: sr-man1
+     # - IN: sr-ecscluster
+      #- TASK: managed
+       # deployMethod: upgrade
       
   - name: sr-ecsdeploybg
     type: deploy
