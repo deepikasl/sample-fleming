@@ -1,6 +1,6 @@
 resources:
 
-  - name: fl-ecscluster
+  - name: rs-ecscluster
     type: cluster
     integration: plv2-ecs
     pointer:
@@ -9,14 +9,14 @@ resources:
       
 #VERSIONS
 
-  - name: fl-version
+  - name: rs-version
     type: version
     seed:
       versionName: "1.2.123-beta"
       
 #NOTIFICATIONS
       
-  - name: fl-slack
+  - name: rs-slack
     type: notification
     integration: "plv2-slackcock1"
     pointer:
@@ -25,7 +25,7 @@ resources:
         - "#pipeline-public"
         - "@shiphitchcock1"
 
-  - name: fl-email
+  - name: rs-email
     type: notification
     integration: "plv2-emailcock1"
     pointer:
@@ -35,7 +35,7 @@ resources:
         
 #IMAGES
         
-  - name: fl-img1
+  - name: rs-img1
     type: image
     integration: plv2-docker
     pointer:
@@ -43,11 +43,9 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  
-      
 #TIME
 
-  - name: fl-timeresource
+  - name: rs-timeresource
     type: time
     seed:
       interval: "8 8 8 8 *"
@@ -58,8 +56,8 @@ resources:
     type: gitRepo
     integration: "github"
     pointer:
-      sourceName: "ci-test2/sample-fleming"
-      branch: "gitrepo"
+      sourceName: "ci-test2/sample-scriptrunsh"
+      branch: "master"
       
  # - name: "sr_ci-test2/sample-fleming_sr-rsync"
   #  type: syncRepo
