@@ -24,8 +24,14 @@ jobs:
     steps:
       - IN: sr-img2
       - IN: sr-tg2
+      
+  - name: sr-man3
+    type: manifest
+    steps:
+      - IN: sr-img2
+      - IN: sr-tg3
 
-# DEPLOYMENTS 
+#DEPLOYMENTS 
 
   - name: sr-ecsdeployup
     type: deploy
