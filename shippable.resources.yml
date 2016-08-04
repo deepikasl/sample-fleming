@@ -52,11 +52,11 @@ resources:
       
 #GITREPO:
 
-  - name: "rs-sample-scriptrunsh"
+  - name: "rs-sample-script"
     type: gitRepo
     integration: "github"
     pointer:
-      sourceName: "ci-test2/sample-scriptrunsh"
+      sourceName: "ci-test2/sample-script"
       branch: "master"
       
  # - name: "sr_ci-test2/sample-fleming_sr-rsync"
