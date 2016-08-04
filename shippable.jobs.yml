@@ -19,16 +19,16 @@ jobs:
       - IN: fl-img1
       - IN: fl-tg1
       
-  - name: fl-man2multiimg
-    type: manifest
-    steps:
-      - IN: fl-img2
-      - IN: fl-img5workingdir
+  #- name: fl-man2multiimg
+   # type: manifest
+    #steps:
+     # - IN: fl-img2
+      #- IN: fl-img5workingdir
       #- IN: fltp-dopts2
       #- IN: flecs-dopts4
        # applyTo:
         #  - fl-img2
-      - IN: fl-tg2
+     # - IN: fl-tg2
       
   - name: fl-man3env
     type: manifest
