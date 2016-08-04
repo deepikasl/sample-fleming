@@ -52,7 +52,7 @@ resources:
       
 #GITREPO:
 
-  - name: "gr_ci-test2/sample-scriptrunsh_master-rsync"
+  - name: "rsgr_sample-scriptrunsh_master-rsync"
     type: gitRepo
     integration: "github"
     pointer:
