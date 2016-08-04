@@ -21,6 +21,7 @@ jobs:
     type: runSh
     steps:
       - IN: rs-sample-script
+      - IN: rs-tg2
       - TASK:
         - script: ls
         - script: ./IN/rs-sample-script/rs-sample-script/echo.sh
