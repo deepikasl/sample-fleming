@@ -1,18 +1,18 @@
 resources:
 
-  - name: rs-ecscluster
-    type: cluster
-    integration: plv2-ecs
-    pointer:
-      sourceName : "testCL"
-      region: "us-west-2"
+ # - name: rs-ecscluster
+  #  type: cluster
+   # integration: plv2-ecs
+    #pointer:
+     # sourceName : "testCL"
+      #region: "us-west-2"
       
 #VERSIONS
 
-  - name: rs-version
-    type: version
-    seed:
-      versionName: "1.2.123-beta"
+ # - name: rs-version
+  #  type: version
+   # seed:
+    #  versionName: "1.2.123-beta"
       
 #NOTIFICATIONS
       
