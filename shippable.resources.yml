@@ -117,9 +117,9 @@ resources:
     type: image
     integration: plv2-docker
     pointer:
-      sourceName: "shiphitchcokc1/invalidpipeline"
+      sourceName: "shippabledocker/pipelinev2"
     seed:
-      versionName: "latesttest"    
+      versionName: "depoly.1"    
       
 # DOCKER OPTIONS:
   
