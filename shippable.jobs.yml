@@ -25,7 +25,7 @@ jobs:
       - IN: fl-img2
       - IN: fltp-dopts2
       - IN: fl-params2
-      - IN: fl-params
+      - IN: fl-scale2
       - IN: fl-tg2
       
   #- name: fl-man2multiimg
