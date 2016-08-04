@@ -2,30 +2,30 @@ resources:
 
 #CLUSTERS
 
-  - name: ecs-cluster
+  - name: gke-cluster
     type: cluster
-    integration: plv2-ecs
+    integration: plv2-gke
     pointer:
-      sourceName : "testCL"
-      region: "us-west-2"
+      sourceName: "small-cluster" #name of the cluster we are deploying.
+      region: "us-east1-d"
       
-  - name: ecsclu1-invalidint
+  - name: gkeclu1-invalidint
     type: cluster
-    integration: plv2-ecstest
+    integration: plv2-gketest
     pointer:
-      sourceName : "testCL"
-      region: "us-west-2"
+      sourceName: "small-cluster" #name of the cluster we are deploying.
+      region: "us-east1-d"
       
-  - name: ecsclu2-invalidclu
+  - name: gkeclu2-invalidclu
     type: cluster
-    integration: plv2-ecstest
+    integration: plv2-gke
     pointer:
-      sourceName : "testbetacl"
-      region: "us-west-2"
+      sourceName: "nothing" #name of the cluster we are deploying.
+      region: "us-east1-d"
         
 #IMAGES
         
-  - name: ecs-img1
+  - name: gke-img1
     type: image
     integration: plv2-docker
     pointer:
@@ -33,7 +33,7 @@ resources:
     seed:
       versionName: "deploy.1"
       
-  - name: ecsimg2-tagdoesntexist
+  - name: gkeimg2-tagdoesntexist
     type: image
     integration: plv2-docker
     pointer:
@@ -43,22 +43,15 @@ resources:
       
 # DOCKER OPTIONS:
   
-  - name: ecs-dopts1
+  - name: gke-dopts1
     type: dockerOptions
     version:
       memory: 128
       #user: "driftking"
-      
-  - name: ecs-dopts2invalid
-    type: dockerOptions
-    version:
-      memory: 128
-      links:
-        - "testaws-invalid"
         
 #PARAMS
 
-  - name: ecs-params1
+  - name: gke-params1
     type: params
     version:
       params:
@@ -68,7 +61,7 @@ resources:
 
 #REPLICAS
       
-  - name: ecs-scale2
+  - name: gke-scale2
     type: replicas
     version:
       count: 2
