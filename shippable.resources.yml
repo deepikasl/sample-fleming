@@ -113,6 +113,14 @@ resources:
     seed:
       versionName: "latest"
       
+  - name: fl-img7invalid
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shiphitchcokc1/invalidpipeline"
+    seed:
+      versionName: "latesttest"    
+      
 # DOCKER OPTIONS:
   
   - name: fltp-dopts1
