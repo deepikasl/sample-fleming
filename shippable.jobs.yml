@@ -49,3 +49,11 @@ jobs:
     steps:
       - IN: ecsman3-invalid
       - IN: ecs-cluster
+      
+  - name: ecs-deploy5upinvaliddopts
+    type: deploy
+    steps:
+      - IN: ecs-man1
+      - IN: ecs-dopts2invalid
+      - IN: ecs-cluster
+      
