@@ -18,7 +18,7 @@ resources:
       
   - name: ecsclu2-invalidclu
     type: cluster
-    integration: plv2-ecstest
+    integration: plv2-ecs
     pointer:
       sourceName : "testbetacl"
       region: "us-west-2"
