@@ -114,21 +114,21 @@ jobs:
       - IN: fl-man4entrypoint
       - IN: fl-tripubcluster
       
-  - name: fl-gkedeployup
-    type: deploy
-    steps:
-      - IN: fl-man1
-      - IN: flgke-dopts3
-      - IN: fl-gkecluster
-      - TASK: managed
-        deployMethod: upgrade
+ # - name: fl-gkedeployup
+  #  type: deploy
+   # steps:
+    #  - IN: fl-man1
+     # - IN: flgke-dopts3
+      #- IN: fl-gkecluster
+    #  - TASK: managed
+     #   deployMethod: upgrade
       
-  - name: fl-gkedeploybg
-    type: deploy
-    steps:
-      - IN: fl-man5driftking
-      - IN: flgke-dopts3
-      - IN: fl-gkecluster
+  #- name: fl-gkedeploybg
+   # type: deploy
+    #steps:
+     # - IN: fl-man5driftking
+    #  - IN: flgke-dopts3
+     # - IN: fl-gkecluster
       
   - name: fl-dcldeploy
     type: deploy
