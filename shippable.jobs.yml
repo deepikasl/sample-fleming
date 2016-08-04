@@ -61,7 +61,7 @@ jobs:
   - name: fl-man7invalid
     type: manifest
     steps:
-      - IN: fl-img7invalid
+      - IN: fl-img1
     #  - IN: fl-dopts6invalid
       - IN: fl-tg7
 
