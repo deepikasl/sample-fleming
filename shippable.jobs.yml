@@ -17,13 +17,13 @@ jobs:
       - IN: rs-img1
       - IN: rs-tg1
       
-  #- name: rs-inrunsh
-   # type: runSh
-    #steps:
-     # - IN: "rs-sample-scriptrunsh"
-      #- TASK:
-       # - script: ls
-        #- script: ./IN/rs-sample-scriptrunsh/rs-sample-scriptrunsh/echo.sh
+  - name: rs-inrunsh
+    type: runSh
+    steps:
+      - IN: rs-sample-script
+      - TASK:
+        - script: ls
+        - script: ./IN/rs-sample-script/rs-sample-script/echo.sh
       #- on_success:
        # - echo 'This block executes after TASK section executes successfully'
        # - NOTIFY: slackNotifcation
