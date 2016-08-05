@@ -16,22 +16,22 @@ resources:
       
 #NOTIFICATIONS
       
- # - name: rs-slack
-  #  type: notification
-   # integration: "plv2-slackcock1"
-    #pointer:
-     # recipients:
-      #  - "#pipeline-pvt"
-       # - "#pipeline-public"
-        #- "@shiphitchcock1"
+  - name: rs-slack
+    type: notification
+    integration: "plv2-slackcock1"
+    pointer:
+      recipients:
+        - "#pipeline-pvt"
+        - "#pipeline-public"
+        - "@shiphitchcock1"
 
- # - name: rs-email
-  #  type: notification
-  #  integration: "plv2-emailcock1"
-   # pointer:
-    #  recipients: 
-     #   - "varsha@shippable.com"
-      #  - "shiphitchcock1@gmail.com"
+  - name: rs-email
+    type: notification
+    integration: "plv2-emailcock1"
+    pointer:
+      recipients: 
+        - "varsha@shippable.com"
+        - "shiphitchcock1@gmail.com"
         
 #IMAGES
         
@@ -45,10 +45,10 @@ resources:
       
 #TIME
 
-  - name: rs-timeresource
-    type: time
-    seed:
-      interval: "8 8 8 8 *"
+  #- name: rs-timeresource
+   # type: time
+    #seed:
+     # interval: "8 8 8 8 *"
       
 #GITREPO:
 
