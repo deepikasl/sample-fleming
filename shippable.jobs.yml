@@ -53,8 +53,9 @@ jobs:
       - TASK:
         - script: "mkdir -p /build/state/" # creating directory 
         - script: "touch /build/state/rs-img1.env" # touch will create new empty file with timestamp
-        - script: "echo 'versionName=latest' >>  /build/state/rs-img1.env" # this will be adding in the file mongo-image.env
-        - script: "echo 'anotherProperty=foo' >>  /build/state/rs-img1.env" # next line will be this in the file mongo-image.env
+        - script: "echo 'Hello'"
+       # - script: "echo 'versionName=latest' >>  /build/state/rs-img1.env" # this will be adding in the file mongo-image.env
+        #- script: "echo 'anotherProperty=foo' >>  /build/state/rs-img1.env" # next line will be this in the file mongo-image.env
       - OUT: rs-img1
       - IN: rs-tg3
       #- NOTIFY: rs-slack
