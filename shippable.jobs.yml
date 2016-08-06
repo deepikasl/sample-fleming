@@ -9,7 +9,7 @@ jobs:
       - TASK: managed
         bump: beta
       #- IN: notify-man1cnrimg
-      #- IN: triggernotify7
+      - IN: fl-tg1
       
 #MANIFESTS
       
