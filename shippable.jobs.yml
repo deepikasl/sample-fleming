@@ -28,7 +28,7 @@ jobs:
   - name: rs-inrunsh
     type: runSh
     steps:
-      - IN: "rs-sample-script"
+      - IN: rs-sample-script
       - IN: rs-tg2
       - TASK:
         - script: ls
