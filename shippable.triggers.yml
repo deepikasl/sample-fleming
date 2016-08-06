@@ -12,7 +12,7 @@ triggers:
    - name: fl-tg3
      type: trigger
      version:
-       counter: 1
+       counter: 2
        
    - name: fl-tg4
      type: trigger
