@@ -52,7 +52,7 @@ resources:
       
 #GITREPO:
 
-  - name: "rs-sample-script"
+  - name: rs-sample-script
     type: gitRepo
     integration: "github"
     pointer:
