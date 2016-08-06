@@ -25,7 +25,19 @@ jobs:
       #- TASK: managed
        # deployMethod: upgrade
       
-  - name: rs-inrunsh
+ # - name: rs-inrunsh
+  #  type: runSh
+   # steps:
+    #  - IN: rs-sample-script
+     # - IN: rs-tg2
+      #- TASK:
+       # - script: ls
+        #- script: ./IN/rs-sample-script/rs-sample-script/echo.sh
+      #- on_success:
+       # - echo 'This block executes after TASK section executes successfully'
+        #- NOTIFY: rs-slack
+        
+  - name: inrunsh
     type: runSh
     steps:
       - IN: rs-sample-script
@@ -33,9 +45,6 @@ jobs:
       - TASK:
         - script: ls
         - script: ./IN/rs-sample-script/rs-sample-script/echo.sh
-      - on_success:
-        - echo 'This block executes after TASK section executes successfully'
-        - NOTIFY: rs-slack
        
   #- name: custom-outrunsh
    # type: runSh
