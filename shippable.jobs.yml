@@ -41,6 +41,7 @@ jobs:
     type: runSh
     steps:
       - IN: rs-sample-script
+        versionName: testsha
       - IN: rs-tg2
       - TASK:
         - script: ls
