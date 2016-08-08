@@ -18,6 +18,7 @@ jobs:
     type: manifest
     steps:
       - IN: fl-img1
+        versionName: "deploy.2"
       - IN: fl-tg1
       
   #- name: fl-man2multiimg
@@ -58,6 +59,7 @@ jobs:
     steps:
       - IN: fl-img6redis
       - IN: fl-man1
+        switch: off
       
   - name: fl-man7invalid
     type: manifest
