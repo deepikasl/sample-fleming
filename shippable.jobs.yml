@@ -1,59 +1,20 @@
 jobs:
-#MANIFESTS
-      
-  - name: ecs-man1
+  - name: lb-mani1
     type: manifest
     steps:
-      - IN: ecs-img1
-      - IN: ecs-tg1
-      
-  - name: ecsman2-invalidimg
-    type: manifest
-    steps:
-      - IN: ecsimg4-tagdoesntexist
-      - IN: ecs-tg2
-      
-  - name: ecsman3-invalid
-    type: manifest
-    steps:
-      - IN: ecs-img2
-        versionNumber: 369
-      - IN: ecs-tg3
+      - IN: lb-imglb
+      - IN: lb-dopt1
+      - IN: lb-tg1
 
-# DEPLOYMENTS 
-
-  - name: ecs-deploy1up
+  - name: lb-ecsDeploy1
     type: deploy
     steps:
-      - IN: ecs-man1
-      - IN: ecs-cluster
+      - IN: lb-mani1
+      - IN: lb-ecscluster
+      # - IN: sn-lb
+      #   applyTo:
+      #     - manifest: sn-manifestjob1-1 # it can only apply to one manifest
+      #       image: sn-myapp3-1 # it can only apply to one image in the manifest
+      #       port: 80
       - TASK: managed
         deployMethod: upgrade
-      
-  - name: ecs-deploy2bginvalidclu
-    type: deploy
-    steps:
-      - IN: ecs-man1
-      - IN: ecsclu2-invalidclu
-      
-  - name: ecs-deploy3upinvalidimg
-    type: deploy
-    steps:
-      - IN: ecsman2-invalidimg
-      - IN: ecs-cluster
-      - TASK: managed
-        deployMethod: upgrade
-
-  - name: ecs-deploy4bgmani
-    type: deploy
-    steps:
-      - IN: ecsman3-invalid
-      - IN: ecs-cluster
-      
-  - name: ecs-deploy5upinvaliddopts
-    type: deploy
-    steps:
-      - IN: ecs-man1
-      - IN: ecs-dopts2invalid
-      - IN: ecs-cluster
-      
