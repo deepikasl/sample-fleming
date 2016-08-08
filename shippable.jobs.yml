@@ -71,6 +71,13 @@ jobs:
       - IN: fl-img1
     #  - IN: fl-dopts6invalid
       - IN: fl-tg8
+      
+  - name: fl-man9
+    type: manifest
+    steps:
+      - IN: fl-img8
+    #  - IN: fl-dopts6invalid
+      - IN: fl-tg9
 
 # DEPLOYMENTS 
 
