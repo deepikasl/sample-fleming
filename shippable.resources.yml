@@ -1,74 +1,34 @@
+
 resources:
-
-#CLUSTERS
-
-  - name: ecs-cluster
-    type: cluster
-    integration: plv2-ecs
-    pointer:
-      sourceName : "testCL"
-      region: "us-west-2"
-      
-  - name: ecsclu1-invalidint
-    type: cluster
-    integration: plv2-ecstest
-    pointer:
-      sourceName : "testCL"
-      region: "us-west-2"
-      
-  - name: ecsclu2-invalidclu
-    type: cluster
-    integration: plv2-ecs
-    pointer:
-      sourceName : "testbetacl"
-      region: "us-west-2"
-        
-#IMAGES
-        
-  - name: ecs-img1
+  - name: lb-imglb
     type: image
-    integration: plv2-docker
+    integration: scriptnull-docker
     pointer:
-      sourceName: "shippabledocker/pipelinev2"
+      sourceName: "scriptnull/sample_node"
+      isPull: true
     seed:
-      versionName: "deploy.1"
-      
-  - name: ecsimg2-tagdoesntexist
-    type: image
-    integration: plv2-docker
+      versionName: "myapp3"
+
+  - name: lb-ecscluster
+    type: cluster
+    integration: scriptnull-aws
     pointer:
-      sourceName: "shiphitchcock1/betaci_nod_limitless_pl"
-    seed:
-      versionName: "nothing.5"
-      
-# DOCKER OPTIONS:
-  
-  - name: ecs-dopts1
+      sourceName : "loadBalanceTest" #name of the cluster we are deploying
+      region: "us-east-1"
+
+  - name: lb-loadb1
+    type: loadBalancer
+    pointer:
+      sourceName: EC2Contai-EcsElast-17A64D22JHQLM
+
+  - name: lb-loadb2
+    type: loadBalancer
+    pointer:
+      sourceName: shLoadBalancer
+
+  - name: lb-dopt1
     type: dockerOptions
     version:
-      memory: 128
-      #user: "driftking"
-      
-  - name: ecs-dopts2invalid
-    type: dockerOptions
-    version:
-      memory: 128
-      links:
-        - "testaws-invalid"
-        
-#PARAMS
-
-  - name: ecs-params1
-    type: params
-    version:
-      params:
-        MONGO_API_URL: "localhost:28017"
-        TEST: BETA
-        pipelinev2: fleming
-
-#REPLICAS
-      
-  - name: ecs-scale2
-    type: replicas
-    version:
-      count: 2
+      memory: 200
+      portMappings:
+        - "80:80"
