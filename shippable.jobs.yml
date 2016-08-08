@@ -64,6 +64,13 @@ jobs:
       - IN: fl-img1
     #  - IN: fl-dopts6invalid
       - IN: fl-tg7
+      
+  - name: fl-man8
+    type: manifest
+    steps:
+      - IN: fl-img1
+    #  - IN: fl-dopts6invalid
+      - IN: fl-tg8
 
 # DEPLOYMENTS 
 
@@ -95,6 +102,14 @@ jobs:
     steps:
       - IN: fl-man7invalid
       - IN: fl-ecscluster
+      
+  - name: fl-ecsdeployuppm6436
+    type: deploy
+    steps:
+      - IN: fl-man8
+      - IN: fl-ecscluster
+      - TASK: managed
+        deployMethod: upgrade
       
   - name: fl-tpdeployup
     type: deploy
