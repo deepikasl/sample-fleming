@@ -125,7 +125,15 @@ resources:
     pointer:
       sourceName: "shippabledocker/pipelinev2"
     seed:
-      versionName: "depoly.1"    
+      versionName: "depoly.1"   
+      
+  - name: fl-img8
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.2"
       
 # DOCKER OPTIONS:
   
