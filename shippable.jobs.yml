@@ -173,7 +173,7 @@ jobs:
       - IN: fl-tg2
       - TASK:
         - script: ls
-        - script: ./IN/rs-sample-script/rs-sample-script/echo.sh
+        - script: ./IN/fl-sample-script/gitRepo/echo.sh
         
 #rSync
 #  - name: fl-rsyncjob
