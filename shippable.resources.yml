@@ -2,7 +2,7 @@
 resources:
   - name: lb-imglb
     type: image
-    integration: scriptnull-docker
+    integration: plv2-docker
     pointer:
       sourceName: "scriptnull/sample_node"
       isPull: true
@@ -11,7 +11,7 @@ resources:
 
   - name: lb-ecscluster
     type: cluster
-    integration: scriptnull-aws
+    integration: plv2-aws
     pointer:
       sourceName : "loadBalanceTest" #name of the cluster we are deploying
       region: "us-east-1"
