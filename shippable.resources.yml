@@ -314,7 +314,13 @@ resources:
     #  count: 1
         
 #GITREPO:
-
+  - name: fl-sample-script
+    type: gitRepo
+    integration: "github"
+    pointer:
+      sourceName: "ci-test2/sample-script"
+      branch: "master"
+      
  # - name: "flgr_sample-fleming_gr-rsync"
   #  type: gitRepo
    # integration: "github"
