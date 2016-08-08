@@ -135,6 +135,14 @@ resources:
     seed:
       versionName: "deploy.3"
       
+  - name: fl-img9
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.2"
+      
 # DOCKER OPTIONS:
   
   - name: fltp-dopts1
