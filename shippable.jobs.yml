@@ -6,10 +6,11 @@ jobs:
     type: release
     steps:
       - IN: fl-version
+        versionName: testrelease
       - TASK: managed
         bump: beta
       #- IN: notify-man1cnrimg
-      - IN: fl-tg1
+      - IN: fl-tg2
       
 #MANIFESTS
       
