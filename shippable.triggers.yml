@@ -2,4 +2,4 @@ triggers:
    - name: lb-tg1
      type: trigger
      version:
-       counter: 2
+       counter: 3
