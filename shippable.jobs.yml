@@ -6,7 +6,7 @@ jobs:
     type: release
     steps:
       - IN: fl-version
-        versionName: testrelease
+        #versionName: testrelease
       - TASK: managed
         bump: beta
       #- IN: notify-man1cnrimg
@@ -162,6 +162,17 @@ jobs:
       - IN: fl-man5driftking
       - IN: fl-ddccluster
       
+#runSh
+  - name: fl-inrunsh
+    type: runSh
+    steps:
+      - IN: fl-sample-script
+        versionName: testsha
+      - IN: fl-tg2
+      - TASK:
+        - script: ls
+        - script: ./IN/rs-sample-script/rs-sample-script/echo.sh
+        
 #rSync
 #  - name: fl-rsyncjob
  #   type: rSync
