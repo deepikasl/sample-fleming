@@ -75,7 +75,7 @@ jobs:
   - name: fl-man9
     type: manifest
     steps:
-      - IN: fl-img8
+      - IN: fl-img9
     #  - IN: fl-dopts6invalid
       - IN: fl-tg9
 
