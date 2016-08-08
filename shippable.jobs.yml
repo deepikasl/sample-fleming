@@ -18,7 +18,7 @@ jobs:
     type: manifest
     steps:
       - IN: fl-img1
-        versionName: deploy
+        versionNumber: 1
       - IN: fl-tg1
       
   #- name: fl-man2multiimg
