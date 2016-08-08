@@ -11,7 +11,7 @@ resources:
 
   - name: lb-ecscluster
     type: cluster
-    integration: plv2-aws
+    integration: plv2-ecs
     pointer:
       sourceName : "loadBalanceTest" #name of the cluster we are deploying
       region: "us-east-1"
