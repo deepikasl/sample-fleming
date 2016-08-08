@@ -167,7 +167,7 @@ jobs:
     type: runSh
     steps:
       - IN: fl-sample-script
-        versionName: testsha
+        #versionName: testsha
       - IN: fl-tg2
       - TASK:
         - script: ls
