@@ -35,6 +35,12 @@ resources:
       sourceName: "default" # we can give anything it deploy instances based on region not by cluster name
       region: "us-east-2"
       
+#LOAD BALANCER
+  - name: fl-lb
+    type: loadBalancer
+    pointer:
+      sourceName: v2betatest
+      
 #VERSIONS
 
   - name: fl-version
