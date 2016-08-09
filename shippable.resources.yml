@@ -85,7 +85,7 @@ resources:
     #seed:
      # versionName: "deploy.5"
       
-  - name: fl-img3env
+  - name: "fl-img3env"
     type: image
     integration: plv2-docker
     pointer:
