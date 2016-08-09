@@ -134,6 +134,7 @@ jobs:
     type: deploy
     steps:
       - IN: fl-man4entrypoint
+        switch: off
       - IN: fl-tripubcluster
       
  # - name: fl-gkedeployup
