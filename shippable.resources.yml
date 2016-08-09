@@ -318,7 +318,7 @@ resources:
     type: gitRepo
     integration: "github"
     pointer:
-      sourceName: "ci-test2/sample-script"
+      sourceName: "ci-test2/sample-scriptrunsh"
       branch: "master"
       
  # - name: "flgr_sample-fleming_gr-rsync"
