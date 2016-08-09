@@ -183,6 +183,15 @@ jobs:
         - script: export versionName=$(cat ./IN/fl-img1/version.json | jq -r '.version.versionName')
         - script: . IN/fl-sample-script/gitRepo/echo.sh
         
+  - name: fl-inrunsh2
+    type: runSh
+    steps:
+      - IN: fl-sample-script
+      - IN: fl-tg6
+      - TASK:
+        - script: ls
+        - script: ./IN/fl-sample-script/gitRepo/echo.sh
+        
 #rSync
 #  - name: fl-rsyncjob
  #   type: rSync
