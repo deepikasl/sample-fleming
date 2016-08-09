@@ -92,12 +92,12 @@ jobs:
       #- TASK: managed
        # deployMethod: upgrade
       
-  - name: fl-ecsdeploybg
-    type: deploy
-    steps:
-      - IN: fl-man4entrypoint
+  #- name: fl-ecsdeploybg
+   # type: deploy
+    #steps:
+     # - IN: fl-man4entrypoint
       #- IN: flecs-dopts4
-      - IN: fl-ecscluster
+      #- IN: fl-ecscluster
       
   - name: fl-ecsdeployupmftomf
     type: deploy
