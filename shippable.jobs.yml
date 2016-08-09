@@ -96,7 +96,7 @@ jobs:
     type: deploy
     steps:
       - IN: fl-man4entrypoint
-      - IN: flecs-dopts4
+      #- IN: flecs-dopts4
       - IN: fl-ecscluster
       
   - name: fl-ecsdeployupmftomf
