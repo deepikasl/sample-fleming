@@ -314,7 +314,15 @@ resources:
     #  count: 1
         
 #GITREPO:
-  - name: fl-sample-script
+
+  - name: fl-sample-script1
+    type: gitRepo
+    integration: "github"
+    pointer:
+      sourceName: "ci-test2/sample-script"
+      branch: "master"
+      
+  - name: fl-sample-script2
     type: gitRepo
     integration: "github"
     pointer:
