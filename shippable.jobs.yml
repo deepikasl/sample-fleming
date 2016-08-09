@@ -12,7 +12,7 @@ jobs:
       #- IN: notify-man1cnrimg
       - IN: fl-tg2
     flags:
-      - sample-fleming_master
+      - sample-fleming_master_rSync
       
 #MANIFESTS
       
