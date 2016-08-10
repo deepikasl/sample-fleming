@@ -149,7 +149,7 @@ jobs:
   - name: fl-gkedeployup
     type: deploy
     steps:
-      - IN: fl-man1
+      - IN: fl-man10deployall
       #- IN: flgke-dopts3
       - IN: fl-gkecluster
       - TASK: managed
@@ -165,13 +165,13 @@ jobs:
   - name: fl-dcldeploy
     type: deploy
     steps:
-      - IN: fl-man5driftking
+      - IN: fl-man10deployall
       - IN: fl-dclcluster
         
   - name: fl-ddcdeploy
     type: deploy
     steps:
-      - IN: fl-man5driftking
+      - IN: fl-man10deployall
       - IN: fl-ddccluster
       
 #runSh
