@@ -47,31 +47,31 @@ jobs:
   - name: inrunsh
     type: runSh
     steps:
-      - IN: rs-sample-script
-        versionName: testsha
+      - IN: sample-script-rs
+       # versionName: testsha
       - IN: rs-tg2
       - TASK:
         - script: ls
-        - script: ./IN/rs-sample-script/rs-sample-script/echo.sh
+        - script: ./IN/sample-script-rs/gitRepo/echo.sh
     on_success:
-      - NOTIFY: rs-slack
-      - NOTIFY: rs-email
+      - NOTIFY: slack-rs
+      - NOTIFY: email-rs
       - script: echo 'infra test'
       - script: echo 'newtesting success'
     on_failure:
       - script: echo 'testing1 failure'
       - script: echo 'failure runSh'
-      - NOTIFY: rs-slack
+      - NOTIFY: slack-rs
       
   - name: outrunsh
     type: runSh
     steps:
       - TASK:
         - script: "mkdir -p /build/state/" # creating directory 
-        - script: "touch /build/state/rs-img1.env" # touch will create new empty file with timestamp
+        - script: "touch /build/state/img1-rs.env" # touch will create new empty file with timestamp
         - script: "echo 'Hello'"
        # - script: "echo 'versionName=latest' >>  /build/state/rs-img1.env" # this will be adding in the file mongo-image.env
         #- script: "echo 'anotherProperty=foo' >>  /build/state/rs-img1.env" # next line will be this in the file mongo-image.env
-      - OUT: rs-img1
+      - OUT: img1-rs
       - IN: rs-tg3
       #- NOTIFY: rs-slack
