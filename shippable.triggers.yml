@@ -14,10 +14,10 @@ triggers:
      version:
        counter: 4
        
-   #- name: rs-tg4
-    # type: trigger
-     #version:
-      # counter: 0
+   - name: rs-tg4
+     type: trigger
+     version:
+       counter: 0
        
    - name: rs-tg5
      type: trigger
