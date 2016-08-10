@@ -74,4 +74,7 @@ jobs:
         #- script: "echo 'anotherProperty=foo' >>  /build/state/rs-img1.env" # next line will be this in the file mongo-image.env
       - OUT: img1-rs
       - IN: rs-tg3
+      - IN: "2img-rs"
+      - IN: "redis-rs"
+      - OUT: "env-rs"
       #- NOTIFY: rs-slack
