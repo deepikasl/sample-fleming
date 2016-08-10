@@ -93,13 +93,13 @@ jobs:
 
 # DEPLOYMENTS 
 
-  - name: fl-ecsdeployup
-    type: deploy
-    steps:
-      - IN: fl-man10deployall
-      - IN: fl-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
+ # - name: fl-ecsdeployup
+  #  type: deploy
+   # steps:
+    #  - IN: fl-man10deployall
+     # - IN: fl-ecscluster
+      #- TASK: managed
+       # deployMethod: upgrade
       
   #- name: fl-ecsdeploybg
    # type: deploy
@@ -130,14 +130,14 @@ jobs:
       - TASK: managed
         deployMethod: upgrade
       
-  - name: fl-tpdeployup
-    type: deploy
-    steps:
-      - IN: fl-man10deployall
+  #- name: fl-tpdeployup
+   # type: deploy
+    #steps:
+     # - IN: fl-man10deployall
       #- IN: fltp-dopts1
-      - IN: fl-tripubcluster
-      - TASK: managed
-        deployMethod: upgrade
+      #- IN: fl-tripubcluster
+    #  - TASK: managed
+     #   deployMethod: upgrade
       
   - name: fl-tpdeploybg
     type: deploy
@@ -146,14 +146,14 @@ jobs:
         switch: off
       - IN: fl-tripubcluster
       
-  - name: fl-gkedeployup
-    type: deploy
-    steps:
-      - IN: fl-man10deployall
+ # - name: fl-gkedeployup
+  #  type: deploy
+   # steps:
+    #  - IN: fl-man10deployall
       #- IN: flgke-dopts3
-      - IN: fl-gkecluster
-      - TASK: managed
-        deployMethod: upgrade
+     # - IN: fl-gkecluster
+      #- TASK: managed
+       # deployMethod: upgrade
       
   #- name: fl-gkedeploybg
    # type: deploy
@@ -162,17 +162,17 @@ jobs:
     #  - IN: flgke-dopts3
      # - IN: fl-gkecluster
       
-  - name: fl-dcldeploy
-    type: deploy
-    steps:
-      - IN: fl-man10deployall
-      - IN: fl-dclcluster
+ # - name: fl-dcldeploy
+  #  type: deploy
+   # steps:
+    #  - IN: fl-man10deployall
+     # - IN: fl-dclcluster
         
-  - name: fl-ddcdeploy
-    type: deploy
-    steps:
-      - IN: fl-man10deployall
-      - IN: fl-ddccluster
+#  - name: fl-ddcdeploy
+ #   type: deploy
+  #  steps:
+   #   - IN: fl-man10deployall
+    #  - IN: fl-ddccluster
       
 #runSh
   - name: fl-inrunsh
