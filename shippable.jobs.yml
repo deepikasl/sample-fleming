@@ -83,16 +83,23 @@ jobs:
       - IN: fl-img9
     #  - IN: fl-dopts6invalid
       - IN: fl-tg9
+      
+  - name: fl-man10deployall
+    type: manifest
+    steps:
+      - IN: fl-img8
+    #  - IN: fl-dopts6invalid
+      - IN: fl-tg10
 
 # DEPLOYMENTS 
 
- # - name: fl-ecsdeployup
-  #  type: deploy
-   # steps:
-    #  - IN: fl-man2multiimg
-     # - IN: fl-ecscluster
-      #- TASK: managed
-       # deployMethod: upgrade
+  - name: fl-ecsdeployup
+    type: deploy
+    steps:
+      - IN: fl-man10deployall
+      - IN: fl-ecscluster
+      - TASK: managed
+        deployMethod: upgrade
       
   #- name: fl-ecsdeploybg
    # type: deploy
@@ -126,8 +133,8 @@ jobs:
   - name: fl-tpdeployup
     type: deploy
     steps:
-      - IN: fl-man5driftking
-      - IN: fltp-dopts1
+      - IN: fl-man10deployall
+      #- IN: fltp-dopts1
       - IN: fl-tripubcluster
       - TASK: managed
         deployMethod: upgrade
@@ -139,14 +146,14 @@ jobs:
         switch: off
       - IN: fl-tripubcluster
       
- # - name: fl-gkedeployup
-  #  type: deploy
-   # steps:
-    #  - IN: fl-man1
-     # - IN: flgke-dopts3
-      #- IN: fl-gkecluster
-    #  - TASK: managed
-     #   deployMethod: upgrade
+  - name: fl-gkedeployup
+    type: deploy
+    steps:
+      - IN: fl-man1
+      #- IN: flgke-dopts3
+      - IN: fl-gkecluster
+      - TASK: managed
+        deployMethod: upgrade
       
   #- name: fl-gkedeploybg
    # type: deploy
