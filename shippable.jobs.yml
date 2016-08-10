@@ -11,11 +11,18 @@ jobs:
       #- IN: notify-man1cnrimg
       #- IN: triggernotify7
 
-  #- name: rs-man1
-   # type: manifest
-    #steps:
-     # - IN: rs-img1
-      #- IN: rs-tg1
+  - name: rs-man1
+    type: manifest
+    steps:
+      - IN: img1-rs
+      - IN: "2img-rs"
+      - IN: "redis-rs"
+      - IN: "env-rs"
+      - IN: version-rs
+      - IN: ecscluster-rs
+      - IN: rs-tg1
+    on_success:
+      - NOTIFY: slack-rs
       
   #- name: rs-ecsdeployup
    # type: deploy
