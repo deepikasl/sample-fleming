@@ -1,22 +1,22 @@
 resources:
 
- # - name: rs-ecscluster
-  #  type: cluster
-   # integration: plv2-ecs
-    #pointer:
-     # sourceName : "testCL"
-      #region: "us-west-2"
+  - name: ecscluster-rs
+    type: cluster
+    integration: plv2-ecs
+    pointer:
+      sourceName : "testCL"
+      region: "us-west-2"
       
 #VERSIONS
 
- # - name: rs-version
-  #  type: version
-   # seed:
-    #  versionName: "1.2.123-beta"
+  - name: version-rs
+    type: version
+    seed:
+      versionName: "1.2.123-beta"
       
 #NOTIFICATIONS
       
-  - name: rs-slack
+  - name: slack-rs
     type: notification
     integration: "plv2-slackcock1"
     pointer:
@@ -25,7 +25,7 @@ resources:
         - "#pipeline-public"
         - "@shiphitchcock1"
 
-  - name: rs-email
+  - name: email-rs
     type: notification
     integration: "plv2-emailcock1"
     pointer:
@@ -35,13 +35,37 @@ resources:
         
 #IMAGES
         
-  - name: rs-img1
+  - name: img1-rs
     type: image
     integration: plv2-docker
     pointer:
       sourceName: "shippabledocker/pipelinev2"
     seed:
       versionName: "deploy.1"
+      
+  - name: "2img-rs"
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.2"
+      
+  - name: "redis-rs"
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "redis"
+    seed:
+      versionName: "latest"
+      
+  - name: "env-rs"
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "scriptnull/busybox"
+    seed:
+      versionName: "nodeenv"
       
 #TIME
 
@@ -52,7 +76,7 @@ resources:
       
 #GITREPO:
 
-  - name: rs-sample-script
+  - name: sample-script-rs
     type: gitRepo
     integration: "github"
     pointer:
