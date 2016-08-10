@@ -182,7 +182,7 @@ jobs:
         - script: sudo apt-get install tree
         - script: tree -F IN
         - script: cat IN/fl-man1/integration.json
-        - script: export versionName=$(cat ./IN/fl-img1/version.json | jq -r '.version.versionName')
+      #  - script: export versionName=$(cat ./IN/fl-img1/version.json | jq -r '.version.versionName')
         - script: . IN/fl-sample-script1/gitRepo/echo.sh
         
   - name: fl-inrunsh2
