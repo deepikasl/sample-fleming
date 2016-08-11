@@ -22,7 +22,7 @@ triggers:
    - name: flsv-tg5
      type: trigger
      version:
-       counter: 1
+       counter: 2
        
    - name: flsv-tg6
      type: trigger
