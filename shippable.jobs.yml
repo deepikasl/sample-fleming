@@ -139,12 +139,12 @@ jobs:
     #  - TASK: managed
      #   deployMethod: upgrade
       
-  - name: fl-tpdeploybg
+  - name: flsv-tpdeploybg
     type: deploy
     steps:
-      - IN: fl-man4entrypoint
+      - IN: flsv-man4entrypoint
         switch: off
-      - IN: fl-tripubcluster
+      #- IN: flsv-tripubcluster
       
  # - name: fl-gkedeployup
   #  type: deploy
