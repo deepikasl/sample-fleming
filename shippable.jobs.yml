@@ -116,11 +116,14 @@ jobs:
      # - TASK: managed
        # deployMethod: upgrade
         
- # - name: flsv-ecsdeploybginvalid
-  #  type: deploy
-   # steps:
-    #  - IN: flsv-man7invalid
-     # - IN: flsv-ecscluster
+  - name: flsv-ecsdeploybginvalid
+    type: deploy
+    steps:
+      - IN: flsv-man5driftking
+      - IN: flsv-dopts6invalid
+      - IN: flsv-ecscluster
+     # - TASK: managed
+       # deployMethod: upgrade
       
 #  - name: flsv-ecsdeployuppm6436
  #   type: deploy
