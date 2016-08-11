@@ -246,11 +246,11 @@ resources:
       #  options:
        #   max-size: 50m
   
- # - name: flsv-dopts6invalid
-  #  type: dockerOptions
-   # version:
-    #  links:
-     #   - "plv2-manifest8redis_0_0_055d5014-109c-4c84-9bbe-3009a523:testenv"
+  - name: flsv-dopts6invalid
+    type: dockerOptions
+    version:
+      links:
+        - "plv2-manifest8redis_0_0_055d5014-109c-4c84-9bbe-3009a523:testenv"
         
 #PARAMS
 
