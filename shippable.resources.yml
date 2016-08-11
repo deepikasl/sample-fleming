@@ -77,13 +77,13 @@ resources:
     seed:
       versionName: "deploy.1"
       
- # - name: flsv-img2
-  #  type: image
-   # integration: plv2-docker
-    #pointer:
-     # sourceName: "shiphitchcock1/betaci_nod_limitless_p"
-    #seed:
-     # versionName: "deploy.5"
+  - name: flsv-img2
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shiphitchcock1/betaci_nod_limitless_p"
+    seed:
+      versionName: "deploy.5"
       
   - name: "flsv-img3env"
     type: image
