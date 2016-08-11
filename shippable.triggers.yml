@@ -1,50 +1,50 @@
 triggers:
-   - name: fl-tg1
+   - name: flsv-tg1
      type: trigger
      version:
        counter: 3
        
-   - name: fl-tg2
+   - name: flsv-tg2
      type: trigger
      version:
        counter: 3
        
-   - name: fl-tg3
+   - name: flsv-tg3
      type: trigger
      version:
        counter: 2
        
-   - name: fl-tg4
+   - name: flsv-tg4
      type: trigger
      version:
        counter: 2
        
-   - name: fl-tg5
+   - name: flsv-tg5
      type: trigger
      version:
        counter: 0
        
-   - name: fl-tg6
+   - name: flsv-tg6
      type: trigger
      version:
        counter: 2
        
-   - name: fl-tg7
+   - name: flsv-tg7
      type: trigger
      version:
        counter: 2
        
-   - name: fl-tg8
+   - name: flsv-tg8
      type: trigger
      version:
        counter: 1
        
-   - name: fl-tg9
+   - name: flsv-tg9
      type: trigger
      version:
        counter: 1
        
-   - name: fl-tg10
+   - name: flsv-tg10
      type: trigger
      version:
        counter: 0
