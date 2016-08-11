@@ -34,13 +34,13 @@ jobs:
         #  - flsv-img2
      # - IN: flsv-tg2
       
-  - name: flsv-man3env
-    type: manifest
-    steps:
-      - IN: flsv-img3env
-      - IN: flsv-params1
+ # - name: flsv-man3env
+  #  type: manifest
+   # steps:
+    #  - IN: flsv-img3env
+     # - IN: flsv-params1
      # - IN: fl-params2
-      - IN: flsv-tg3
+      #- IN: flsv-tg3
       
   - name: flsv-man4entrypoint
     type: manifest
