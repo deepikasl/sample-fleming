@@ -190,7 +190,6 @@ jobs:
         - script: tree -F IN
         - script: cat IN/flsv-man1/integration.json
        # - script: export versionName=$(cat ./IN/fl-img1/version.json | jq -r '.version.versionName')
-        - script: . IN/fl-sample-script1/gitRepo/echo.sh
         
   # - name: flsv-inrunsh2
   #   type: runSh
