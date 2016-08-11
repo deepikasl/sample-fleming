@@ -28,18 +28,18 @@ jobs:
     steps:
       - IN: flsv-img2
       - IN: flsv-img5workingdir
-      - IN: fltpsv-dopts2
-      - IN: flecssv-dopts4
-        applyTo:
-          - flsv-img2
+     # - IN: fltpsv-dopts2
+     # - IN: flecssv-dopts4
+      #  applyTo:
+        #  - flsv-img2
       - IN: flsv-tg2
       
   - name: flsv-man3env
     type: manifest
     steps:
       - IN: flsv-img3env
-      - IN: flsv-params1
-      - IN: fl-params2
+     # - IN: flsv-params1
+     # - IN: fl-params2
       - IN: flsv-tg2
       
   - name: flsv-man4entrypoint
@@ -74,21 +74,18 @@ jobs:
     type: manifest
     steps:
       - IN: flsv-img9
-      - IN: flsv-dopts6invalid
       - IN: flsv-tg2
       
   - name: flsv-man9
     type: manifest
     steps:
       - IN: flsv-img9
-      - IN: flsv-dopts6invalid
       - IN: flsv-tg2
       
   - name: flsv-man10deployall
     type: manifest
     steps:
       - IN: flsv-img8
-      - IN: flsv-dopts6invalid
       - IN: flsv-tg2
 
 # DEPLOYMENTS 
