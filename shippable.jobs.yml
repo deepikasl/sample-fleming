@@ -2,133 +2,133 @@ jobs:
 
 #RELEASE
 
-  - name: fl-release
-    type: release
-    steps:
-      - IN: fl-version
+  #- name: flsv-release
+   # type: release
+    #steps:
+     # - IN: flsv-version
         #versionName: testrelease
-      - TASK: managed
-        bump: beta
-      #- IN: notify-man1cnrimg
-      - IN: fl-tg2
-    flags:
-      - sample-fleming_master_rSync
+     # - TASK: managed
+      #  bump: beta
+      #- IN: flsv-man1
+      #- IN: flsv-tg2
+   # flags:
+    #  - flsv-release
       
 #MANIFESTS
       
-  - name: fl-man1
+  - name: flsv-man1
     type: manifest
     steps:
-      - IN: fl-img1
+      - IN: flsv-img1
        # versionNumber: 100
-      - IN: fl-tg1
+      - IN: flsv-tg1
       
-  #- name: fl-man2multiimg
+  #- name: flsv-man2multiimg
    # type: manifest
     #steps:
-     # - IN: fl-img2
-      #- IN: fl-img5workingdir
-      #- IN: fltp-dopts2
-      #- IN: flecs-dopts4
+     # - IN: flsv-img2
+      #- IN: flsv-img5workingdir
+      #- IN: fltpsv-dopts2
+      #- IN: flecssv-dopts4
        # applyTo:
-        #  - fl-img2
-     # - IN: fl-tg2
+        #  - flsv-img2
+     # - IN: flsv-tg2
       
-  - name: fl-man3env
+  - name: flsv-man3env
     type: manifest
     steps:
-      - IN: fl-img3env
-      - IN: fl-params1
+      - IN: flsv-img3env
+      - IN: flsv-params1
      # - IN: fl-params2
-      - IN: fl-tg3
+      - IN: flsv-tg3
       
-  - name: fl-man4entrypoint
+  - name: flsv-man4entrypoint
     type: manifest
     steps:
-      - IN: fl-img4entrypoint
+      - IN: flsv-img4entrypoint
       - TASK: managed
-      - IN: fl-tg4
+      - IN: flsv-tg4
       
-  - name: fl-man5driftking
+  - name: flsv-man5driftking
     type: manifest
     steps:
-      - IN: fl-img5workingdir
-      - IN: fl-tg5
+      - IN: flsv-img5workingdir
+      - IN: flsv-tg5
       - TASK: managed
   
-  - name: fl-man6redismftomf
+  - name: flsv-man6redismftomf
     type: manifest
     steps:
-      - IN: fl-img6redis
-      - IN: fl-man1
+      - IN: flsv-img6redis
+      - IN: flsv-man1
         switch: off
       
-  - name: fl-man7invalid
-    type: manifest
-    steps:
-      - IN: fl-img1
+ # - name: flsv-man7invalid
+   # type: manifest
+    #steps:
+     # - IN: flsv-img1
     #  - IN: fl-dopts6invalid
-      - IN: fl-tg7
+      #- IN: flsv-tg7
       
-  - name: fl-man8
-    type: manifest
-    steps:
-      - IN: fl-img9
-    #  - IN: fl-dopts6invalid
-      - IN: fl-tg8
+ # - name: flsv-man8
+  #  type: manifest
+   # steps:
+    #  - IN: flsv-img9
+    #  - IN: flsv-dopts6invalid
+     # - IN: flsv-tg8
       
-  - name: fl-man9
-    type: manifest
-    steps:
-      - IN: fl-img9
-    #  - IN: fl-dopts6invalid
-      - IN: fl-tg9
+  #- name: flsv-man9
+   # type: manifest
+    #steps:
+     # - IN: flsv-img9
+    #  - IN: flsv-dopts6invalid
+      #- IN: flsv-tg9
       
-  - name: fl-man10deployall
-    type: manifest
-    steps:
-      - IN: fl-img8
-    #  - IN: fl-dopts6invalid
-      - IN: fl-tg10
+  #- name: flsv-man10deployall
+   # type: manifest
+    #steps:
+     # - IN: flsv-img8
+    #  - IN: flsv-dopts6invalid
+     # - IN: flsv-tg10
 
 # DEPLOYMENTS 
 
- # - name: fl-ecsdeployup
+ # - name: flsv-ecsdeployup
   #  type: deploy
    # steps:
-    #  - IN: fl-man10deployall
-     # - IN: fl-ecscluster
+    #  - IN: flsv-man10deployall
+     # - IN: flsv-ecscluster
       #- TASK: managed
        # deployMethod: upgrade
       
-  #- name: fl-ecsdeploybg
+  #- name: flsv-ecsdeploybg
    # type: deploy
     #steps:
-     # - IN: fl-man4entrypoint
-      #- IN: flecs-dopts4
-      #- IN: fl-ecscluster
+     # - IN: flsv-man4entrypoint
+      #- IN: flecssv-dopts4
+      #- IN: flsv-ecscluster
       
-  - name: fl-ecsdeployupmftomf
-    type: deploy
-    steps:
-      - IN: fl-man6redismftomf
-      - IN: fl-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
+  #- name: flsv-ecsdeployupmftomf
+   # type: deploy
+    #steps:
+     # - IN: flsv-man6redismftomf
+    #  - IN: flsv-ecscluster
+     # - TASK: managed
+       # deployMethod: upgrade
         
-  - name: fl-ecsdeploybginvalid
-    type: deploy
-    steps:
-      - IN: fl-man7invalid
-      - IN: fl-ecscluster
+ # - name: flsv-ecsdeploybginvalid
+  #  type: deploy
+   # steps:
+    #  - IN: flsv-man7invalid
+     # - IN: flsv-ecscluster
       
-  - name: fl-ecsdeployuppm6436
-    type: deploy
-    steps:
-      - IN: fl-man8
-      - IN: fl-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
+#  - name: flsv-ecsdeployuppm6436
+ #   type: deploy
+  #  steps:
+   #   - IN: flsv-man8
+    #  - IN: flsv-ecscluster
+     # - TASK: managed
+      #  deployMethod: upgrade
       
   #- name: fl-tpdeployup
    # type: deploy
@@ -175,28 +175,28 @@ jobs:
     #  - IN: fl-ddccluster
       
 #runSh
-  - name: fl-inrunsh
-    type: runSh
-    steps:
-      - IN: fl-sample-script1
-        versionName: "149dc247602ba40192703b5fe0a1bfae01bd8490"
-      - IN: fl-tg2
-      - IN: fl-img1
-      - IN: fl-man1
-      - TASK:
+  #- name: flsv-inrunsh
+   # type: runSh
+    #steps:
+     # - IN: flsv-sample-script1
+      #  versionName: "149dc247602ba40192703b5fe0a1bfae01bd8490"
+      #- IN: flsv-tg2
+      #- IN: flsv-img1
+      #- IN: flsv-man1
+      #- TASK:
       #  - script: ls
        # - script: ./IN/fl-sample-script/gitRepo/echo.sh
-        - script: sudo apt-get install tree
-        - script: tree -F IN
-        - script: cat IN/fl-man1/integration.json
+       # - script: sudo apt-get install tree
+        #- script: tree -F IN
+        #- script: cat IN/fl-man1/integration.json
       #  - script: export versionName=$(cat ./IN/fl-img1/version.json | jq -r '.version.versionName')
-        - script: . IN/fl-sample-script1/gitRepo/echo.sh
+        #- script: . IN/fl-sample-script1/gitRepo/echo.sh
         
-  - name: fl-inrunsh2
+  - name: flsv-inrunsh2
     type: runSh
     steps:
-      - IN: fl-sample-script2
-      - IN: fl-tg6
+      - IN: flsv-sample-script2
+      - IN: flsv-tg6
       - TASK:
         - script: ls
         - script: ./IN/fl-sample-script2/gitRepo/echo.sh
