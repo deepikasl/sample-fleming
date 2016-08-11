@@ -28,36 +28,36 @@ resources:
       sourceName: "small-cluster" #name of the cluster we are deploying.
       region: "us-east1-d"
       
-  - name: fl-tripubcluster
-    type: cluster
-    integration: plv2-tripub
-    pointer:
-      sourceName: "default" # we can give anything it deploy instances based on region not by cluster name
-      region: "us-east-2"
+ # - name: fl-tripubcluster
+  #  type: cluster
+   # integration: plv2-tripub
+    #pointer:
+     # sourceName: "default" # we can give anything it deploy instances based on region not by cluster name
+      #region: "us-east-2"
       
 #LOAD BALANCER
-  - name: fl-lb
-    type: loadBalancer
-    pointer:
-      sourceName: v2betatest
+  #- name: fl-lb
+   # type: loadBalancer
+    #pointer:
+     # sourceName: v2betatest
       
 #VERSIONS
 
-  - name: fl-version
-    type: version
-    seed:
-      versionName: "1.2.123-beta"
+ # - name: fl-version
+  #  type: version
+   # seed:
+    #  versionName: "1.2.123-beta"
       
 #NOTIFICATIONS
       
-  - name: fl-slack
-    type: notification
-    integration: "plv2-slackcock1"
-    pointer:
-      recipients:
-        - "#pipeline-pvt"
-        - "#pipeline-public"
-        - "@shiphitchcock1"
+  #- name: fl-slack
+   # type: notification
+    #integration: "plv2-slackcock1"
+    #pointer:
+     # recipients:
+      #  - "#pipeline-pvt"
+       # - "#pipeline-public"
+        #- "@shiphitchcock1"
 
   - name: fl-email
     type: notification
@@ -85,13 +85,13 @@ resources:
     #seed:
      # versionName: "deploy.5"
       
-  - name: "fl-img3env"
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "scriptnull/busybox"
-    seed:
-      versionName: "nodeenv"
+ # - name: "fl-img3env"
+  #  type: image
+   # integration: plv2-docker
+    #pointer:
+     # sourceName: "scriptnull/busybox"
+    #seed:
+     # versionName: "nodeenv"
       
   - name: fl-img4entrypoint
     type: image
@@ -123,25 +123,9 @@ resources:
     type: image
     integration: plv2-docker
     pointer:
-      sourceName: "shippabledocker/pipelinev2"
+      sourceName: "shippabledocker/pipelinev2test"
     seed:
-      versionName: "depoly.1"   
-      
-  - name: fl-img8
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.3"
-      
-  - name: fl-img9
-    type: image
-    integration: plv2-docker
-    pointer:
-      sourceName: "shippabledocker/pipelinev2"
-    seed:
-      versionName: "deploy.2"
+      versionName: "deploy123"   
       
 # DOCKER OPTIONS:
   
@@ -245,28 +229,28 @@ resources:
         - '/bin/sh'
         - './entrypoint2.sh'
        
-  - name: flecs-dopts5
-    type: dockerOptions
-    version:
-      links:
-        - "fl-img5workingdir"
-      volumesFrom:
-        - "fl-img5workingdir:ro"
-      user: "driftking"
-      workingDir: "/makemeworking"
-      cmd:
-        - "node"
-        - "job.js"
-      logConfig:
-        type: "json-file"
-        options:
-          max-size: 50m
+ # - name: flecs-dopts5
+  #  type: dockerOptions
+   # version:
+    #  links:
+     #   - "fl-img5workingdir"
+      #volumesFrom:
+       # - "fl-img5workingdir:ro"
+      #user: "driftking"
+      #workingDir: "/makemeworking"
+      #cmd:
+       # - "node"
+      #  - "job.js"
+    #  logConfig:
+     #   type: "json-file"
+      #  options:
+       #   max-size: 50m
   
-  - name: fl-dopts6invalid
-    type: dockerOptions
-    version:
-      links:
-        - "plv2-manifest8redis_0_0_055d5014-109c-4c84-9bbe-3009a523:testenv"
+ # - name: fl-dopts6invalid
+  #  type: dockerOptions
+   # version:
+    #  links:
+     #   - "plv2-manifest8redis_0_0_055d5014-109c-4c84-9bbe-3009a523:testenv"
         
 #PARAMS
 
@@ -289,10 +273,10 @@ resources:
         #DB_PASSWORD: "aye0aye"
         #ENVIRONMENT: "test-aws"
       
-  #- name: fl-scale2
-   # type: replicas
-    #version:
-     # count: 2
+  - name: fl-scale2
+    type: replicas
+    version:
+      count: 2
 
   #- name: fl-scale3
    # type: replicas
@@ -305,13 +289,6 @@ resources:
    # type: time
     #seed:
      # interval: "8 8 8 8 *"
-      
-#kickStart
-
- # - name: fl-kickstartr
-  #  type: kickStart
-   # version: 
-    #  count: 1
         
 #GITREPO:
 
@@ -322,12 +299,12 @@ resources:
       sourceName: "ci-test2/sample-script"
       branch: "master"
       
-  - name: fl-sample-script2
-    type: gitRepo
-    integration: "github"
-    pointer:
-      sourceName: "ci-test2/sample-scriptrunsh"
-      branch: "master"
+  #- name: fl-sample-script2
+   # type: gitRepo
+    #integration: "github"
+    #pointer:
+     # sourceName: "ci-test2/sample-scriptrunsh"
+      #branch: "master"
       
  # - name: "flgr_sample-fleming_gr-rsync"
   #  type: gitRepo
@@ -336,7 +313,7 @@ resources:
      # sourceName: "ci-test2/sample-fleming"
       #branch: "gitrepo"
       
-  #- name: "flsr_sample-fleming_sr-rsync"
+  #- name: "flsr_sample-fleming_sr-rsync" # throws error in rSync job if we have syncRepo resource-> expected
    # type: syncRepo
     #integration: "github"
     #pointer:
