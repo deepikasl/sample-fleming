@@ -175,31 +175,31 @@ jobs:
     #  - IN: fl-ddccluster
       
 #runSh
-  #- name: flsv-inrunsh
-   # type: runSh
-    #steps:
-     # - IN: flsv-sample-script1
-      #  versionName: "149dc247602ba40192703b5fe0a1bfae01bd8490"
-      #- IN: flsv-tg2
-      #- IN: flsv-img1
-      #- IN: flsv-man1
-      #- TASK:
-      #  - script: ls
-       # - script: ./IN/fl-sample-script/gitRepo/echo.sh
-       # - script: sudo apt-get install tree
-        #- script: tree -F IN
-        #- script: cat IN/fl-man1/integration.json
-      #  - script: export versionName=$(cat ./IN/fl-img1/version.json | jq -r '.version.versionName')
-        #- script: . IN/fl-sample-script1/gitRepo/echo.sh
-        
-  - name: flsv-inrunsh2
+  - name: flsv-inrunsh
     type: runSh
     steps:
-      - IN: flsv-sample-script2
-      - IN: flsv-tg6
+      - IN: flsv-sample-script1
+        versionName: "149dc247602ba40192703b5fe0a1bfae01bd8490"
+      - IN: flsv-tg2
+      #- IN: flsv-img1
+      #- IN: flsv-man1
       - TASK:
         - script: ls
-        - script: ./IN/flsv-sample-script2/gitRepo/echo.sh
+        - script: ./IN/flsv-sample-script1/gitRepo/echo.sh
+        - script: sudo apt-get install tree
+        - script: tree -F IN
+        - script: cat IN/fl-man1/integration.json
+       # - script: export versionName=$(cat ./IN/fl-img1/version.json | jq -r '.version.versionName')
+        - script: . IN/fl-sample-script1/gitRepo/echo.sh
+        
+  # - name: flsv-inrunsh2
+  #   type: runSh
+  #   steps:
+  #     - IN: flsv-sample-script2
+  #     - IN: flsv-tg6
+  #     - TASK:
+  #       - script: ls
+        # - script: ./IN/flsv-sample-script2/gitRepo/echo.sh
         
 #rSync
 #  - name: fl-rsyncjob
