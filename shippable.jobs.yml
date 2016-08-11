@@ -179,7 +179,7 @@ jobs:
     type: runSh
     steps:
       - IN: flsv-sample-script1
-        versionName: "149dc247602ba40192703b5fe0a1bfae01bd8490"
+        #versionName: "149dc247602ba40192703b5fe0a1bfae01bd8490"
       - IN: flsv-tg2
       #- IN: flsv-img1
       #- IN: flsv-man1
