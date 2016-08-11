@@ -2,22 +2,22 @@ triggers:
    - name: flsv-tg1
      type: trigger
      version:
-       counter: 3
+       counter: 0
        
    - name: flsv-tg2
      type: trigger
      version:
-       counter: 3
+       counter: 0
        
    - name: flsv-tg3
      type: trigger
      version:
-       counter: 2
+       counter: 0
        
    - name: flsv-tg4
      type: trigger
      version:
-       counter: 2
+       counter: 0
        
    - name: flsv-tg5
      type: trigger
@@ -27,22 +27,22 @@ triggers:
    - name: flsv-tg6
      type: trigger
      version:
-       counter: 2
+       counter: 0
        
    - name: flsv-tg7
      type: trigger
      version:
-       counter: 2
+       counter: 0
        
    - name: flsv-tg8
      type: trigger
      version:
-       counter: 1
+       counter: 0
        
    - name: flsv-tg9
      type: trigger
      version:
-       counter: 1
+       counter: 0
        
    - name: flsv-tg10
      type: trigger
