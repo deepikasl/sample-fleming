@@ -23,24 +23,24 @@ jobs:
        # versionNumber: 100
       - IN: flsv-tg1
       
-  #- name: flsv-man2multiimg
-   # type: manifest
-    #steps:
-     # - IN: flsv-img2
-      #- IN: flsv-img5workingdir
-      #- IN: fltpsv-dopts2
-      #- IN: flecssv-dopts4
-       # applyTo:
-        #  - flsv-img2
-     # - IN: flsv-tg2
+  - name: flsv-man2multiimg
+    type: manifest
+    steps:
+      - IN: flsv-img2
+      - IN: flsv-img5workingdir
+      - IN: fltpsv-dopts2
+      - IN: flecssv-dopts4
+        applyTo:
+          - flsv-img2
+      - IN: flsv-tg2
       
- # - name: flsv-man3env
-  #  type: manifest
-   # steps:
-    #  - IN: flsv-img3env
-     # - IN: flsv-params1
-     # - IN: fl-params2
-      #- IN: flsv-tg3
+  - name: flsv-man3env
+    type: manifest
+    steps:
+      - IN: flsv-img3env
+      - IN: flsv-params1
+      - IN: fl-params2
+      - IN: flsv-tg2
       
   - name: flsv-man4entrypoint
     type: manifest
@@ -63,33 +63,33 @@ jobs:
       - IN: flsv-man1
         switch: off
       
- # - name: flsv-man7invalid
-   # type: manifest
-    #steps:
-     # - IN: flsv-img1
-    #  - IN: fl-dopts6invalid
-      #- IN: flsv-tg7
+  - name: flsv-man7invalid
+    type: manifest
+    steps:
+      - IN: flsv-img1
+      - IN: fl-dopts6invalid
+      - IN: flsv-tg2
       
- # - name: flsv-man8
-  #  type: manifest
-   # steps:
-    #  - IN: flsv-img9
-    #  - IN: flsv-dopts6invalid
-     # - IN: flsv-tg8
+  - name: flsv-man8
+    type: manifest
+    steps:
+      - IN: flsv-img9
+      - IN: flsv-dopts6invalid
+      - IN: flsv-tg2
       
-  #- name: flsv-man9
-   # type: manifest
-    #steps:
-     # - IN: flsv-img9
-    #  - IN: flsv-dopts6invalid
-      #- IN: flsv-tg9
+  - name: flsv-man9
+    type: manifest
+    steps:
+      - IN: flsv-img9
+      - IN: flsv-dopts6invalid
+      - IN: flsv-tg2
       
-  #- name: flsv-man10deployall
-   # type: manifest
-    #steps:
-     # - IN: flsv-img8
-    #  - IN: flsv-dopts6invalid
-     # - IN: flsv-tg10
+  - name: flsv-man10deployall
+    type: manifest
+    steps:
+      - IN: flsv-img8
+      - IN: flsv-dopts6invalid
+      - IN: flsv-tg2
 
 # DEPLOYMENTS 
 
@@ -183,7 +183,7 @@ jobs:
     steps:
       - IN: flsv-sample-script1
         #versionName: "149dc247602ba40192703b5fe0a1bfae01bd8490"
-      - IN: flsv-tg2
+      - IN: flsv-tg3
       - IN: flsv-img1
       - IN: flsv-man1
       - TASK:
