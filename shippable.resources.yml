@@ -85,13 +85,13 @@ resources:
     #seed:
      # versionName: "deploy.5"
       
- # - name: "flsv-img3env"
-  #  type: image
-   # integration: plv2-docker
-    #pointer:
-     # sourceName: "scriptnull/busybox"
-    #seed:
-     # versionName: "nodeenv"
+  - name: "flsv-img3env"
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "scriptnull/busybox"
+    seed:
+      versionName: "nodeenv"
       
   - name: flsv-img4entrypoint
     type: image
@@ -126,6 +126,22 @@ resources:
       sourceName: "shippabledocker/pipelinev2test"
     seed:
       versionName: "deploy123"   
+      
+  - name: flsv-img8
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.2"
+      
+  - name: flsv-img9
+    type: image
+    integration: plv2-docker
+    pointer:
+      sourceName: "shippabledocker/pipelinev2"
+    seed:
+      versionName: "deploy.3"
       
 # DOCKER OPTIONS:
   
