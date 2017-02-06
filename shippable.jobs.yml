@@ -77,12 +77,12 @@ jobs:
     #  - IN: fl-dopts6invalid
       - IN: fl-tg8
       
-  - name: fl-man9
-    type: manifest
-    steps:
-      - IN: fl-img9
+  #- name: fl-man9
+   # type: manifest
+    #steps:
+     # - IN: fl-img9
     #  - IN: fl-dopts6invalid
-      - IN: fl-tg9
+      #- IN: fl-tg9
       
   - name: fl-man10deployall
     type: manifest
