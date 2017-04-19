@@ -1,209 +1,71 @@
 jobs:
+  - name: dv-man
+    type: manifest
+    steps:
+      - IN: dv-image
+        pull: false
+        versionName: latest
+        versionNumber: 0
+      - IN: dv-params
+        applyTo:
+          - dv-image
+      - IN: dv-opts
+      - IN: trigger-dv-man
+    on_success:
+      - NOTIFY: slackNotification
+    on_failure:
+      - NOTIFY: slackNotification
+    flags:
+      - dv
 
-#RELEASE
+  - name: dv-dep-test
+    type: deploy
+    on_start:
+      - NOTIFY: slackNotification
+    steps:
+      - IN: env-test
+        versionName: latest
+        versionNumber: 0
+        pull: false
+      - TASK: managed
+        deployMethod: upgrade
+    on_failure:
+      - NOTIFY: slackNotification
 
-  - name: fl-release
+  - name: box-man
+    type: manifest
+    steps:
+      - IN: box-opts
+      - IN: box-params
+      - OUT: box-image
+      - TASK: managed
+    flags:
+      - box
+    
+
+  - name: multi-manifest
+    type:  deploy
+    steps:
+      - IN: box-man
+      - IN: dv-man
+      - IN: env-test
+
+  - name: release-one
     type: release
     steps:
-      - IN: fl-version
-        #versionName: testrelease
+      - IN: version-resource
+      - IN: dv-man
       - TASK: managed
-        bump: beta
-      #- IN: notify-man1cnrimg
-      - IN: fl-tg2
-    flags:
-      - sample-fleming_master_rSync
-      
-#MANIFESTS
-      
-  - name: fl-man1
-    type: manifest
-    steps:
-      - IN: fl-img1
-       # versionNumber: 100
-      - IN: fl-tg1
-      
-  #- name: fl-man2multiimg
-   # type: manifest
-    #steps:
-     # - IN: fl-img2
-      #- IN: fl-img5workingdir
-      #- IN: fltp-dopts2
-      #- IN: flecs-dopts4
-       # applyTo:
-        #  - fl-img2
-     # - IN: fl-tg2
-      
-  - name: fl-man3env
-    type: manifest
-    steps:
-      - IN: fl-img3env
-      - IN: fl-params1
-     # - IN: fl-params2
-      - IN: fl-tg3
-      
-  - name: fl-man4entrypoint
-    type: manifest
-    steps:
-      - IN: fl-img4entrypoint
-      - TASK: managed
-      - IN: fl-tg4
-      
-  - name: fl-man5driftking
-    type: manifest
-    steps:
-      - IN: fl-img5workingdir
-      - IN: fl-tg5
-      - TASK: managed
-  
-  - name: fl-man6redismftomf
-    type: manifest
-    steps:
-      - IN: fl-img6redis
-      - IN: fl-man1
-        switch: off
-      
-  - name: fl-man7invalid
-    type: manifest
-    steps:
-      - IN: fl-img1
-    #  - IN: fl-dopts6invalid
-      - IN: fl-tg7
-      
-  - name: fl-man8
-    type: manifest
-    steps:
-      - IN: fl-img9
-    #  - IN: fl-dopts6invalid
-      - IN: fl-tg8
-      
-  #- name: fl-man9
-   # type: manifest
-    #steps:
-     # - IN: fl-img9
-    #  - IN: fl-dopts6invalid
-      #- IN: fl-tg9
-      
-  - name: fl-man10deployall
-    type: manifest
-    steps:
-      - IN: fl-img8
-    #  - IN: fl-dopts6invalid
-      - IN: fl-tg10
+        bump: major
 
-# DEPLOYMENTS 
-
- # - name: fl-ecsdeployup
-  #  type: deploy
-   # steps:
-    #  - IN: fl-man10deployall
-     # - IN: fl-ecscluster
-      #- TASK: managed
-       # deployMethod: upgrade
-      
-  #- name: fl-ecsdeploybg
-   # type: deploy
-    #steps:
-     # - IN: fl-man4entrypoint
-      #- IN: flecs-dopts4
-      #- IN: fl-ecscluster
-      
-  - name: fl-ecsdeployupmftomf
-    type: deploy
-    steps:
-      - IN: fl-man6redismftomf
-      - IN: fl-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
-        
-  - name: fl-ecsdeploybginvalid
-    type: deploy
-    steps:
-      - IN: fl-man7invalid
-      - IN: fl-ecscluster
-      
-  - name: fl-ecsdeployuppm6436
-    type: deploy
-    steps:
-      - IN: fl-man8
-      - IN: fl-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
-      
-  #- name: fl-tpdeployup
-   # type: deploy
-    #steps:
-     # - IN: fl-man10deployall
-      #- IN: fltp-dopts1
-      #- IN: fl-tripubcluster
-    #  - TASK: managed
-     #   deployMethod: upgrade
-      
-  - name: fl-tpdeploybg
-    type: deploy
-    steps:
-      - IN: fl-man4entrypoint
-        switch: off
-      - IN: fl-tripubcluster
-      
- # - name: fl-gkedeployup
-  #  type: deploy
-   # steps:
-    #  - IN: fl-man10deployall
-      #- IN: flgke-dopts3
-     # - IN: fl-gkecluster
-      #- TASK: managed
-       # deployMethod: upgrade
-      
-  #- name: fl-gkedeploybg
-   # type: deploy
-    #steps:
-     # - IN: fl-man5driftking
-    #  - IN: flgke-dopts3
-     # - IN: fl-gkecluster
-      
- # - name: fl-dcldeploy
-  #  type: deploy
-   # steps:
-    #  - IN: fl-man10deployall
-     # - IN: fl-dclcluster
-        
-#  - name: fl-ddcdeploy
- #   type: deploy
-  #  steps:
-   #   - IN: fl-man10deployall
-    #  - IN: fl-ddccluster
-      
-#runSh
-  - name: fl-inrunsh
+  - name: infra-provision
     type: runSh
     steps:
-      - IN: fl-sample-script1
-        versionName: "149dc247602ba40192703b5fe0a1bfae01bd8490"
-      - IN: fl-tg2
-      - IN: fl-img1
-      - IN: fl-man1
-      - TASK:
-      #  - script: ls
-       # - script: ./IN/fl-sample-script/gitRepo/echo.sh
-        - script: sudo apt-get install tree
-        - script: tree -F IN
-        - script: cat IN/fl-man1/integration.json
-      #  - script: export versionName=$(cat ./IN/fl-img1/version.json | jq -r '.version.versionName')
-        - script: . IN/fl-sample-script1/gitRepo/echo.sh
-        
-  - name: fl-inrunsh2
-    type: runSh
-    steps:
-      - IN: fl-sample-script2
-      - IN: fl-tg6
+      - IN: dv-man
+      - IN: release-one
+      - IN: infra-repo
       - TASK:
         - script: ls
-        - script: ./IN/fl-sample-script2/gitRepo/echo.sh
-        
-#rSync
-#  - name: fl-rsyncjob
- #   type: rSync
-  #  steps:
-   #   - IN: "flsr_sample-fleming_sr-rsync"
-    #  - IN: fl-tg6
+    on_success:
+      - NOTIFY: slackNotification
+      - NOTIFY: myEmail
