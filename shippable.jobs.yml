@@ -9,3 +9,8 @@ jobs:
   on_success:
     - NOTIFY: slackNotification
     - NOTIFY: myEmail
+
+- name: VT1_runCI
+    type: runCI
+    steps:
+      - IN: VT1_ciRepo
