@@ -3,7 +3,7 @@ resources:
 #CIREPO:
 
   - name: VT1_ciRepo
-    type: ciRepo
+    type: cirepo
     integration: deepika-git
     pointer:
       sourceName: deepikasl/VT1
