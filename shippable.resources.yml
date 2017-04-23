@@ -1,13 +1,6 @@
 resources:
         
 #CIREPO:
-
-  - name: VT1_ciRepo
-    type: cirepo
-    integration: deepika-git
-    pointer:
-      sourceName: deepikasl/VT1
-      branch: master
     
   - name: slackNotification
     type: notification
