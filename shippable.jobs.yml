@@ -3,14 +3,14 @@ jobs:
 - name: infra-provision
   type: runSh
   steps:
-    - IN: VT2_ciRepo
+    - IN: coretest_matrixbuildJav_ciRepo
     - TASK:
       - script: ls
   on_success:
     - NOTIFY: slackNotification
     - NOTIFY: myEmail
 
-- name: VT2_runCI
+- name: coretest_matrixbuildJav_runCI
   type: runCI
   steps:
-    - IN: VT2_ciRepo
+    - IN: coretest_matrixbuildJav_ciRepo
