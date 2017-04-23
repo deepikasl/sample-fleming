@@ -7,7 +7,20 @@ resources:
     integration: "deepika-git"
     pointer:
       sourceName: "deepikasl/VT2"
-      
+    
+  - name: slackNotification
+    type: notification
+    integration: deepika-slack
+    pointer:
+      recipients:
+        - "#deepika-test"
+
+  - name: myEmail
+    type: notification
+    pointer:
+      method: email
+      recipients:
+        -  "deepika@shippable.com"
   #- name: "syncRepo_plv2notifications-notifyemailslack"
    # type: syncRepo
   #  integration: "shiphitchcock1-github"
