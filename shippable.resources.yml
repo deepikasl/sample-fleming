@@ -2,7 +2,7 @@ resources:
         
 #CIREPO:
 
-  - name: cirepo
+  - name: VT1_ciRepo
     type: ciRepo
     integration: deepika-git
     pointer:
