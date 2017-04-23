@@ -1,43 +1,7 @@
 jobs:
 
-#RELEASE
-
-  - name: gr-release
-    type: release
+- name: inrunsh
+    type: runSh
     steps:
-      - IN: gr-version
-      - IN: gr-tg1
-      - TASK: managed
-        bump: beta
-    #- IN: notify-man1cnrimg
-      
-#MANIFESTS
-      
-  - name: gr-man1
-    type: manifest
-    steps:
-      - IN: gr-img1
-      - IN: gr-tg1
-      
-  - name: gr-man2
-    type: manifest
-    steps:
-      - IN: gr-img2
-      - IN: gr-tg2
-
-# DEPLOYMENTS 
-
-  - name: gr-ecsdeployup
-    type: deploy
-    steps:
-      - IN: gr-man1
-      - IN: gr-ecscluster
-      - TASK: managed
-        deployMethod: upgrade
-      
-  - name: gr-ecsdeploybg
-    type: deploy
-    steps:
-      - IN: gr-man2
-      - IN: gr-ecscluster
+      - IN: cirepo
       
