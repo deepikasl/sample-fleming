@@ -13,4 +13,4 @@ jobs:
 - name: VT2_runCI
   type: runCI
   steps:
-    - IN: VT1_ciRepo
+    - IN: VT2_ciRepo
