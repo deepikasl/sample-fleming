@@ -3,14 +3,14 @@ jobs:
 - name: infra-provision
   type: runSh
   steps:
-    - IN: VT1_ciRepo
+    - IN: VT2_ciRepo
     - TASK:
       - script: ls
   on_success:
     - NOTIFY: slackNotification
     - NOTIFY: myEmail
 
-- name: VT1_runCI
+- name: VT2_runCI
   type: runCI
   steps:
     - IN: VT1_ciRepo
