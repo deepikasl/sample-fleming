@@ -1,7 +1,11 @@
 jobs:
 
-- name: inrunsh
+- name: infra-provision
     type: runSh
     steps:
-      - IN: cirepo
-      
+      - IN: ciRepo
+      - TASK:
+        - script: ls
+    on_success:
+      - NOTIFY: slackNotification
+      - NOTIFY: myEmail
