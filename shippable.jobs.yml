@@ -3,7 +3,7 @@ jobs:
 - name: infra-provision
   type: runSh
   steps:
-    - IN: ciRepo
+    - IN: cirepo
     - TASK:
       - script: ls
   on_success:
