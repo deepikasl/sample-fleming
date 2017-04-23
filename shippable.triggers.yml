@@ -1,1 +1,5 @@
-
+triggers:
+   - name: trigger-myEmail
+     type: trigger
+     version:
+       counter: 1
