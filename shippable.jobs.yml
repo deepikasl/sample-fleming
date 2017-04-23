@@ -11,6 +11,6 @@ jobs:
     - NOTIFY: myEmail
 
 - name: VT1_runCI
-    type: runCI
-    steps:
-      - IN: VT1_ciRepo
+  type: runCI
+  steps:
+    - IN: VT1_ciRepo
